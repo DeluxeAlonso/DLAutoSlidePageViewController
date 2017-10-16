@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DLAutoSlidePageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03X-Cc-7LE">
+                                <rect key="frame" x="-0.5" y="166.5" width="375" height="333.5"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="03X-Cc-7LE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3A5-5m-yXg"/>
+                            <constraint firstItem="03X-Cc-7LE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="dA5-qs-oV0"/>
+                            <constraint firstItem="03X-Cc-7LE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pO2-JF-GZK"/>
+                            <constraint firstItem="03X-Cc-7LE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yda-Gc-UoF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="03X-Cc-7LE" id="ext-fb-MuP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="CD1-O8-Fkm">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="KBG-gl-lV1" customClass="ImageViewController" customModule="DLAutoSlidePageViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zwx-nx-2cz">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChromeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="MPA-h1-PQJ">
+                                <rect key="frame" x="8" y="8" width="184" height="184"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MPA-h1-PQJ" firstAttribute="top" secondItem="zwx-nx-2cz" secondAttribute="top" constant="8" id="CzJ-W2-mdv"/>
+                            <constraint firstItem="MPA-h1-PQJ" firstAttribute="leading" secondItem="zwx-nx-2cz" secondAttribute="leading" constant="8" id="bfC-4y-lMe"/>
+                            <constraint firstAttribute="trailing" secondItem="MPA-h1-PQJ" secondAttribute="trailing" constant="8" id="hqQ-NT-eMU"/>
+                            <constraint firstAttribute="bottom" secondItem="MPA-h1-PQJ" secondAttribute="bottom" constant="8" id="k51-1O-55g"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="200" height="200"/>
+                    <connections>
+                        <outlet property="logoImageView" destination="MPA-h1-PQJ" id="0GE-gR-OtI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6x-cd-pID" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24" y="491"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ChromeIcon" width="150" height="150"/>
+    </resources>
+</document>
