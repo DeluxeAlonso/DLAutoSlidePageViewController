@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DLAutoSlidePageViewController
 
 class ViewController: UIViewController {
   
@@ -21,11 +22,6 @@ class ViewController: UIViewController {
     setupElements()
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   // MARK: - Private
   
   private func setupElements() {
@@ -33,8 +29,11 @@ class ViewController: UIViewController {
   }
   
   private func setupPageViewController() {
-    let pages = setupPages()
-    let pageViewController = DLAutoSlidePageViewController(pages: pages, timeInterval: 3.0, interPageSpacing: 0.0)
+    let pages: [UIViewController] = setupPages()
+    let pageViewController = DLAutoSlidePageViewController(pages: pages,
+                                                           timeInterval: 3.0,
+                                                           transitionStyle: .scroll,
+                                                           interPageSpacing: 0.0)
     addChildViewController(pageViewController)
     containerView.addSubview(pageViewController.view)
     pageViewController.view.frame = containerView.bounds

@@ -7,50 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E25A02FA1F9487B9002683FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02F91F9487B9002683FC /* AppDelegate.swift */; };
-		E25A02FC1F9487B9002683FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02FB1F9487B9002683FC /* ViewController.swift */; };
-		E25A02FF1F9487B9002683FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A02FD1F9487B9002683FC /* Main.storyboard */; };
-		E25A03011F9487B9002683FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25A03001F9487B9002683FC /* Assets.xcassets */; };
-		E25A03041F9487B9002683FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A03021F9487B9002683FC /* LaunchScreen.storyboard */; };
-		E25A030C1F948805002683FC /* DLAutoSlidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A030B1F948805002683FC /* DLAutoSlidePageViewController.swift */; };
-		E2FDE50D1F948DD000EA7FC7 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */; };
+		74961AEA64554C74B1614B67 /* Pods_DLAutoSlidePageViewController_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4685D2AE0DA1E3E542F070EA /* Pods_DLAutoSlidePageViewController_Example.framework */; };
+		E223005720BB05F800FC7EBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02FB1F9487B9002683FC /* ViewController.swift */; };
+		E223005820BB05F800FC7EBE /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */; };
+		E223005920BB05F800FC7EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02F91F9487B9002683FC /* AppDelegate.swift */; };
+		E223005B20BB05F800FC7EBE /* Pods_DLAutoSlidePageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */; };
+		E223005D20BB05F800FC7EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A03021F9487B9002683FC /* LaunchScreen.storyboard */; };
+		E223005E20BB05F800FC7EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25A03001F9487B9002683FC /* Assets.xcassets */; };
+		E223005F20BB05F800FC7EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A02FD1F9487B9002683FC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E25A02F61F9487B9002683FC /* DLAutoSlidePageViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DLAutoSlidePageViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C339EC1896E8E6716F08C25 /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; sourceTree = "<group>"; };
+		4685D2AE0DA1E3E542F070EA /* Pods_DLAutoSlidePageViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DLAutoSlidePageViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DLAutoSlidePageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E223006420BB05F800FC7EBE /* DLAutoSlidePageViewController Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DLAutoSlidePageViewController Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25A02F91F9487B9002683FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25A02FB1F9487B9002683FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E25A02FE1F9487B9002683FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E25A03001F9487B9002683FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E25A03031F9487B9002683FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E25A03051F9487B9002683FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E25A030B1F948805002683FC /* DLAutoSlidePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DLAutoSlidePageViewController.swift; sourceTree = "<group>"; };
 		E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		FF8CAACEACD6206F33154DB5 /* Pods-DLAutoSlidePageViewController Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLAutoSlidePageViewController Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E25A02F31F9487B9002683FC /* Frameworks */ = {
+		E223005A20BB05F800FC7EBE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E223005B20BB05F800FC7EBE /* Pods_DLAutoSlidePageViewController.framework in Frameworks */,
+				74961AEA64554C74B1614B67 /* Pods_DLAutoSlidePageViewController_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86B69C9C2E30178CF1D9561F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */,
+				4685D2AE0DA1E3E542F070EA /* Pods_DLAutoSlidePageViewController_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCCC763DA1DAB665462461DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C339EC1896E8E6716F08C25 /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */,
+				FF8CAACEACD6206F33154DB5 /* Pods-DLAutoSlidePageViewController Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E25A02ED1F9487B9002683FC = {
 			isa = PBXGroup;
 			children = (
 				E25A02F81F9487B9002683FC /* DLAutoSlidePageViewController */,
 				E25A02F71F9487B9002683FC /* Products */,
+				DCCC763DA1DAB665462461DF /* Pods */,
+				86B69C9C2E30178CF1D9561F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E25A02F71F9487B9002683FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E25A02F61F9487B9002683FC /* DLAutoSlidePageViewController.app */,
+				E223006420BB05F800FC7EBE /* DLAutoSlidePageViewController Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,7 +90,6 @@
 				E25A03001F9487B9002683FC /* Assets.xcassets */,
 				E25A03021F9487B9002683FC /* LaunchScreen.storyboard */,
 				E25A03051F9487B9002683FC /* Info.plist */,
-				E25A030B1F948805002683FC /* DLAutoSlidePageViewController.swift */,
 				E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */,
 			);
 			path = DLAutoSlidePageViewController;
@@ -73,21 +98,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E25A02F51F9487B9002683FC /* DLAutoSlidePageViewController */ = {
+		E223005420BB05F800FC7EBE /* DLAutoSlidePageViewController Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E25A03081F9487B9002683FC /* Build configuration list for PBXNativeTarget "DLAutoSlidePageViewController" */;
+			buildConfigurationList = E223006120BB05F800FC7EBE /* Build configuration list for PBXNativeTarget "DLAutoSlidePageViewController Example" */;
 			buildPhases = (
-				E25A02F21F9487B9002683FC /* Sources */,
-				E25A02F31F9487B9002683FC /* Frameworks */,
-				E25A02F41F9487B9002683FC /* Resources */,
+				E223005520BB05F800FC7EBE /* [CP] Check Pods Manifest.lock */,
+				E223005620BB05F800FC7EBE /* Sources */,
+				E223005A20BB05F800FC7EBE /* Frameworks */,
+				E223005C20BB05F800FC7EBE /* Resources */,
+				E223006020BB05F800FC7EBE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = DLAutoSlidePageViewController;
+			name = "DLAutoSlidePageViewController Example";
 			productName = DLAutoSlidePageViewController;
-			productReference = E25A02F61F9487B9002683FC /* DLAutoSlidePageViewController.app */;
+			productReference = E223006420BB05F800FC7EBE /* DLAutoSlidePageViewController Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -97,11 +124,10 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Alonso;
 				TargetAttributes = {
-					E25A02F51F9487B9002683FC = {
-						CreatedOnToolsVersion = 9.0;
+					E223005420BB05F800FC7EBE = {
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -119,33 +145,71 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E25A02F51F9487B9002683FC /* DLAutoSlidePageViewController */,
+				E223005420BB05F800FC7EBE /* DLAutoSlidePageViewController Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E25A02F41F9487B9002683FC /* Resources */ = {
+		E223005C20BB05F800FC7EBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25A03041F9487B9002683FC /* LaunchScreen.storyboard in Resources */,
-				E25A03011F9487B9002683FC /* Assets.xcassets in Resources */,
-				E25A02FF1F9487B9002683FC /* Main.storyboard in Resources */,
+				E223005D20BB05F800FC7EBE /* LaunchScreen.storyboard in Resources */,
+				E223005E20BB05F800FC7EBE /* Assets.xcassets in Resources */,
+				E223005F20BB05F800FC7EBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E223005520BB05F800FC7EBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DLAutoSlidePageViewController Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E223006020BB05F800FC7EBE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DLAutoSlidePageViewController/DLAutoSlidePageViewController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DLAutoSlidePageViewController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		E25A02F21F9487B9002683FC /* Sources */ = {
+		E223005620BB05F800FC7EBE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25A030C1F948805002683FC /* DLAutoSlidePageViewController.swift in Sources */,
-				E25A02FC1F9487B9002683FC /* ViewController.swift in Sources */,
-				E2FDE50D1F948DD000EA7FC7 /* ImageViewController.swift in Sources */,
-				E25A02FA1F9487B9002683FC /* AppDelegate.swift in Sources */,
+				E223005720BB05F800FC7EBE /* ViewController.swift in Sources */,
+				E223005820BB05F800FC7EBE /* ImageViewController.swift in Sources */,
+				E223005920BB05F800FC7EBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +235,40 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E223006220BB05F800FC7EBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C339EC1896E8E6716F08C25 /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = "$(SRCROOT)/DLAutoSlidePageViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alonso.DLAutoSlidePageViewControllera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E223006320BB05F800FC7EBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF8CAACEACD6206F33154DB5 /* Pods-DLAutoSlidePageViewController Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E95KU8J3PN;
+				INFOPLIST_FILE = "$(SRCROOT)/DLAutoSlidePageViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alonso.DLAutoSlidePageViewControllera;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		E25A03061F9487B9002683FC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -185,6 +283,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -192,6 +291,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -242,6 +342,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -249,6 +350,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -278,55 +380,23 @@
 			};
 			name = Release;
 		};
-		E25A03091F9487B9002683FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E95KU8J3PN;
-				INFOPLIST_FILE = DLAutoSlidePageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alonso.DLAutoSlidePageViewController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E25A030A1F9487B9002683FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E95KU8J3PN;
-				INFOPLIST_FILE = DLAutoSlidePageViewController/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.alonso.DLAutoSlidePageViewController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E223006120BB05F800FC7EBE /* Build configuration list for PBXNativeTarget "DLAutoSlidePageViewController Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E223006220BB05F800FC7EBE /* Debug */,
+				E223006320BB05F800FC7EBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E25A02F11F9487B9002683FC /* Build configuration list for PBXProject "DLAutoSlidePageViewController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E25A03061F9487B9002683FC /* Debug */,
 				E25A03071F9487B9002683FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E25A03081F9487B9002683FC /* Build configuration list for PBXNativeTarget "DLAutoSlidePageViewController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E25A03091F9487B9002683FC /* Debug */,
-				E25A030A1F9487B9002683FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

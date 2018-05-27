@@ -22,23 +22,21 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   }
   
   // MARK: - Lifecycle
-  
+    
+  deinit {
+    stopTimer()
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
+  }
+    
   override public func viewDidLoad() {
     super.viewDidLoad()
     delegate = self
     dataSource = self
+    setupObservers()
   }
   
-  override public func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
-  override public func viewWillDisappear(_ animated: Bool) {
-    stopTimer()
-  }
-  
-  public convenience init(pages: [UIViewController], timeInterval ti: TimeInterval = 5.0, interPageSpacing: Float = 0.0) {
-    self.init(transitionStyle: .scroll,
+  public convenience init(pages: [UIViewController], timeInterval ti: TimeInterval = 0.0, transitionStyle: UIPageViewControllerTransitionStyle, interPageSpacing: Float = 0.0) {
+    self.init(transitionStyle: transitionStyle,
               navigationOrientation: .horizontal,
               options: [UIPageViewControllerOptionInterPageSpacingKey: interPageSpacing])
     self.pages = pages
@@ -49,15 +47,20 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   
   // MARK: - Private
   
+  fileprivate func setupObservers() {
+    let notificationCenter = NotificationCenter.default
+    notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+  }
+  
   fileprivate func setupPageView() {
     currentPageIndex = 0
     setViewControllers([pages.first!], direction: .forward, animated: true, completion: nil)
   }
   
   fileprivate func setupPageControl() {
-    setupPageTimer()
-    pageControl?.currentPageIndicatorTintColor = UIColor.lightGray
-    pageControl?.pageIndicatorTintColor = UIColor.gray
+    if self.timeInterval != 0.0 { setupPageTimer() }
+    pageControl?.currentPageIndicatorTintColor = UIColor.gray
+    pageControl?.pageIndicatorTintColor = UIColor.lightGray
     pageControl?.backgroundColor = UIColor.clear
   }
   
@@ -81,8 +84,15 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   }
   
   fileprivate func restartTimer() {
+    guard self.timeInterval != 0.0 else { return }
     stopTimer()
     setupPageTimer()
+  }
+  
+  // MARK: - Selectors
+  
+  @objc fileprivate func movedToForeground() {
+    restartTimer()
   }
   
   @objc fileprivate func changePage() {

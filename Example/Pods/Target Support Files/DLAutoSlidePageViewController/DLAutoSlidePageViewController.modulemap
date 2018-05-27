@@ -1,0 +1,6 @@
+framework module DLAutoSlidePageViewController {
+  umbrella header "DLAutoSlidePageViewController-umbrella.h"
+
+  export *
+  module * { export * }
+}
