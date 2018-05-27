@@ -11,7 +11,6 @@
 		E223005720BB05F800FC7EBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02FB1F9487B9002683FC /* ViewController.swift */; };
 		E223005820BB05F800FC7EBE /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */; };
 		E223005920BB05F800FC7EBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25A02F91F9487B9002683FC /* AppDelegate.swift */; };
-		E223005B20BB05F800FC7EBE /* Pods_DLAutoSlidePageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */; };
 		E223005D20BB05F800FC7EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A03021F9487B9002683FC /* LaunchScreen.storyboard */; };
 		E223005E20BB05F800FC7EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25A03001F9487B9002683FC /* Assets.xcassets */; };
 		E223005F20BB05F800FC7EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A02FD1F9487B9002683FC /* Main.storyboard */; };
@@ -20,7 +19,6 @@
 /* Begin PBXFileReference section */
 		3C339EC1896E8E6716F08C25 /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4685D2AE0DA1E3E542F070EA /* Pods_DLAutoSlidePageViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DLAutoSlidePageViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DLAutoSlidePageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E223006420BB05F800FC7EBE /* DLAutoSlidePageViewController Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DLAutoSlidePageViewController Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25A02F91F9487B9002683FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E25A02FB1F9487B9002683FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +35,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E223005B20BB05F800FC7EBE /* Pods_DLAutoSlidePageViewController.framework in Frameworks */,
 				74961AEA64554C74B1614B67 /* Pods_DLAutoSlidePageViewController_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,7 +45,6 @@
 		86B69C9C2E30178CF1D9561F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8CEB96F51453ABC2B5A9FCBC /* Pods_DLAutoSlidePageViewController.framework */,
 				4685D2AE0DA1E3E542F070EA /* Pods_DLAutoSlidePageViewController_Example.framework */,
 			);
 			name = Frameworks;

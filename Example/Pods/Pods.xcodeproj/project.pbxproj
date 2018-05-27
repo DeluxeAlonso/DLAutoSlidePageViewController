@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		11B05E7734955D6DC91EA8F75DD4F6CE /* Pods-DLAutoSlidePageViewController Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B9A68C17E067E239A155190D3932051 /* Pods-DLAutoSlidePageViewController Example-dummy.m */; };
 		18CF3F26A3500F4BC1136F551A769166 /* Pods-DLAutoSlidePageViewController Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EC5E115F40A09B4DAE6CC7F9A211D4E /* Pods-DLAutoSlidePageViewController Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		363DF5FC055600E8FE06152AACE2F37F /* DLAutoSlidePageViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0996BC083600C74A765397C88319006F /* DLAutoSlidePageViewController-dummy.m */; };
-		8E76F64E76C1FE19CC6279823DC5B716 /* DLAutoSlidePageViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C1806380166FE6512E8AAC7C8D1F4794 /* DLAutoSlidePageViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		363DF5FC055600E8FE06152AACE2F37F /* DLAutoSlidePageViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 643D82B4E2181ECC13C76F9C1780AF7D /* DLAutoSlidePageViewController-dummy.m */; };
+		8E76F64E76C1FE19CC6279823DC5B716 /* DLAutoSlidePageViewController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CF04B6CD7B1FBA57B26A4DF6C2CA2B /* DLAutoSlidePageViewController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9144ACF9228FA743FE814C144D630631 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		A341093653C43F3F509BD0DCE17ADA3E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		B1667C2500970E0ADED4F810D765EAF0 /* DLAutoSlidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70360781125079693128A6935E0DB7B2 /* DLAutoSlidePageViewController.swift */; };
+		B1667C2500970E0ADED4F810D765EAF0 /* DLAutoSlidePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A19CADDDBDE9986CF76A91DB15B3DE /* DLAutoSlidePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,29 +27,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0996BC083600C74A765397C88319006F /* DLAutoSlidePageViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLAutoSlidePageViewController-dummy.m"; sourceTree = "<group>"; };
-		0F9EDB50470E935C5D9C4CDD090F1BA4 /* DLAutoSlidePageViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLAutoSlidePageViewController.xcconfig; sourceTree = "<group>"; };
-		23EF84FB22AA43B1FD144093DD0988ED /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		045AFA3B689BA16FC27C744071118376 /* DLAutoSlidePageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLAutoSlidePageViewController.modulemap; sourceTree = "<group>"; };
+		1AB023A217F4319CEAF3AB59789F571D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		20A19CADDDBDE9986CF76A91DB15B3DE /* DLAutoSlidePageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DLAutoSlidePageViewController.swift; path = Source/DLAutoSlidePageViewController.swift; sourceTree = "<group>"; };
+		22C8B286708AE4E483F8B9E5A5FF154C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		2B9A68C17E067E239A155190D3932051 /* Pods-DLAutoSlidePageViewController Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DLAutoSlidePageViewController Example-dummy.m"; sourceTree = "<group>"; };
+		2E88A237139DEAC7C3B8D8BC50024F9D /* DLAutoSlidePageViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-prefix.pch"; sourceTree = "<group>"; };
 		35ACFCCF0EB6E8DD2FF10FC959D960BD /* Pods-DLAutoSlidePageViewController Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DLAutoSlidePageViewController Example-resources.sh"; sourceTree = "<group>"; };
-		3E413FB7071699D9D300A3DFBB5EDE26 /* DLAutoSlidePageViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-prefix.pch"; sourceTree = "<group>"; };
-		3E4F54C54B8178E50DB375B78C89CE5B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EC5E115F40A09B4DAE6CC7F9A211D4E /* Pods-DLAutoSlidePageViewController Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DLAutoSlidePageViewController Example-umbrella.h"; sourceTree = "<group>"; };
 		482AC2E3DB2C7796B05CDB15EC866564 /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4BB2D05B4B235359BAD54C7014094FA5 /* Pods-DLAutoSlidePageViewController Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DLAutoSlidePageViewController Example.release.xcconfig"; sourceTree = "<group>"; };
 		53AA11C30EF1EFEEECDE83BE94D4D105 /* Pods-DLAutoSlidePageViewController Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DLAutoSlidePageViewController Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		643895A69E73898FA9FA7913A4E3603A /* DLAutoSlidePageViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = DLAutoSlidePageViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		643D82B4E2181ECC13C76F9C1780AF7D /* DLAutoSlidePageViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLAutoSlidePageViewController-dummy.m"; sourceTree = "<group>"; };
 		6584A65B521538793332EFB2E95D79AE /* DLAutoSlidePageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DLAutoSlidePageViewController.framework; path = DLAutoSlidePageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD9C2BC1AE570BBAD8C584BEC0B2751 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		70360781125079693128A6935E0DB7B2 /* DLAutoSlidePageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DLAutoSlidePageViewController.swift; path = Source/DLAutoSlidePageViewController.swift; sourceTree = "<group>"; };
+		70AF9B66C27B24501F6624A1E6652C7E /* DLAutoSlidePageViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = DLAutoSlidePageViewController.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7A557D6030E496CA26BE7DD7EB5567C5 /* DLAutoSlidePageViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLAutoSlidePageViewController.xcconfig; sourceTree = "<group>"; };
 		8D6FA1C1CB4428C500502E08666356E5 /* Pods-DLAutoSlidePageViewController Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DLAutoSlidePageViewController Example-frameworks.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93EA3A436D579295CA28A2BD179FE267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3A59BFCB97C260A1C006040B09EF9C2 /* Pods-DLAutoSlidePageViewController Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DLAutoSlidePageViewController Example.modulemap"; sourceTree = "<group>"; };
 		A6347E192260975D055E1E923413E025 /* Pods-DLAutoSlidePageViewController Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DLAutoSlidePageViewController Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B3456F8A4420F054F018FE16833E482A /* DLAutoSlidePageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLAutoSlidePageViewController.modulemap; sourceTree = "<group>"; };
+		B9CF04B6CD7B1FBA57B26A4DF6C2CA2B /* DLAutoSlidePageViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-umbrella.h"; sourceTree = "<group>"; };
 		BD9C89E0A017F10BAAA39741123761FA /* Pods_DLAutoSlidePageViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DLAutoSlidePageViewController_Example.framework; path = "Pods-DLAutoSlidePageViewController Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C1806380166FE6512E8AAC7C8D1F4794 /* DLAutoSlidePageViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +82,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		48E0D37CD135ED10109BFBBAECE2780E /* DLAutoSlidePageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				20A19CADDDBDE9986CF76A91DB15B3DE /* DLAutoSlidePageViewController.swift */,
+				5F52D56E8C77B5152C3418C4CC6E4321 /* Pod */,
+				7FCE6A8F0CF63B24FD158F086ED2DFAD /* Support Files */,
+			);
+			name = DLAutoSlidePageViewController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		5F52D56E8C77B5152C3418C4CC6E4321 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				70AF9B66C27B24501F6624A1E6652C7E /* DLAutoSlidePageViewController.podspec */,
+				1AB023A217F4319CEAF3AB59789F571D /* LICENSE */,
+				22C8B286708AE4E483F8B9E5A5FF154C /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -100,23 +122,26 @@
 			);
 			sourceTree = "<group>";
 		};
+		7FCE6A8F0CF63B24FD158F086ED2DFAD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				045AFA3B689BA16FC27C744071118376 /* DLAutoSlidePageViewController.modulemap */,
+				7A557D6030E496CA26BE7DD7EB5567C5 /* DLAutoSlidePageViewController.xcconfig */,
+				643D82B4E2181ECC13C76F9C1780AF7D /* DLAutoSlidePageViewController-dummy.m */,
+				2E88A237139DEAC7C3B8D8BC50024F9D /* DLAutoSlidePageViewController-prefix.pch */,
+				B9CF04B6CD7B1FBA57B26A4DF6C2CA2B /* DLAutoSlidePageViewController-umbrella.h */,
+				93EA3A436D579295CA28A2BD179FE267 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DLAutoSlidePageViewController";
+			sourceTree = "<group>";
+		};
 		96DAE4F90D4D8FC710CCBBAD34637C0E /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B1E2627D67314F5A1E5681AE2C67C677 /* DLAutoSlidePageViewController */,
+				48E0D37CD135ED10109BFBBAECE2780E /* DLAutoSlidePageViewController */,
 			);
 			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		B1E2627D67314F5A1E5681AE2C67C677 /* DLAutoSlidePageViewController */ = {
-			isa = PBXGroup;
-			children = (
-				70360781125079693128A6935E0DB7B2 /* DLAutoSlidePageViewController.swift */,
-				CDF2DF84ED5089A607D4ED3692693E76 /* Pod */,
-				CF3DC647E3A9D4DAA54AE161A2357215 /* Support Files */,
-			);
-			name = DLAutoSlidePageViewController;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -125,29 +150,6 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CDF2DF84ED5089A607D4ED3692693E76 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				643895A69E73898FA9FA7913A4E3603A /* DLAutoSlidePageViewController.podspec */,
-				23EF84FB22AA43B1FD144093DD0988ED /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		CF3DC647E3A9D4DAA54AE161A2357215 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3456F8A4420F054F018FE16833E482A /* DLAutoSlidePageViewController.modulemap */,
-				0F9EDB50470E935C5D9C4CDD090F1BA4 /* DLAutoSlidePageViewController.xcconfig */,
-				0996BC083600C74A765397C88319006F /* DLAutoSlidePageViewController-dummy.m */,
-				3E413FB7071699D9D300A3DFBB5EDE26 /* DLAutoSlidePageViewController-prefix.pch */,
-				C1806380166FE6512E8AAC7C8D1F4794 /* DLAutoSlidePageViewController-umbrella.h */,
-				3E4F54C54B8178E50DB375B78C89CE5B /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DLAutoSlidePageViewController";
 			sourceTree = "<group>";
 		};
 		DB306CCC8BD43911ED0E19ED78156D78 /* Targets Support Files */ = {
@@ -328,7 +330,7 @@
 		};
 		4201D5F72447C847CC2E614C731B99F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F9EDB50470E935C5D9C4CDD090F1BA4 /* DLAutoSlidePageViewController.xcconfig */;
+			baseConfigurationReference = 7A557D6030E496CA26BE7DD7EB5567C5 /* DLAutoSlidePageViewController.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -519,7 +521,7 @@
 		};
 		A90A93B8A87CA09CABD858159FF93404 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F9EDB50470E935C5D9C4CDD090F1BA4 /* DLAutoSlidePageViewController.xcconfig */;
+			baseConfigurationReference = 7A557D6030E496CA26BE7DD7EB5567C5 /* DLAutoSlidePageViewController.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

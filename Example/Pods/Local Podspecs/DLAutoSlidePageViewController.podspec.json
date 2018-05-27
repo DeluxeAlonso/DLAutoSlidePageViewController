@@ -1,8 +1,8 @@
 {
   "name": "DLAutoSlidePageViewController",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "summary": "An auto slide PageViewController.",
-  "description": "An auto slide PageViewController with customizable time interval.",
+  "description": "An auto slide PageViewController with a customizable time interval.",
   "homepage": "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController",
   "license": {
     "type": "MIT",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git",
-    "tag": "0.1.2"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "10.0"
