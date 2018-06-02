@@ -33,6 +33,7 @@ let pages = [firstVC, secondVC]
 
 let pageViewController = DLAutoSlidePageViewController(pages: pages,
                                                        timeInterval: 3.0,
+                                                       transitionStyle: .scroll,
                                                        interPageSpacing: 0.0)
                                                        
 addChildViewController(pageViewController)

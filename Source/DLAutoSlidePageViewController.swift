@@ -16,6 +16,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   fileprivate var nextPageIndex: Int = 0
   fileprivate var timer: Timer?
   fileprivate var timeInterval: TimeInterval = 0.0
+  fileprivate var transitionInProgress: Bool = false
   
   public var pageControl: UIPageControl? {
     return UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
@@ -53,8 +54,9 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   }
   
   fileprivate func setupPageView() {
+    guard let firstPage = pages.first else { return }
     currentPageIndex = 0
-    setViewControllers([pages.first!], direction: .forward, animated: true, completion: nil)
+    setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
   }
   
   fileprivate func setupPageControl() {
@@ -65,6 +67,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   }
   
   fileprivate func viewControllerAtIndex(_ index: Int) -> UIViewController {
+    guard index < pages.count else { return UIViewController() }
     currentPageIndex = index
     return pages[index]
   }
@@ -92,6 +95,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   // MARK: - Selectors
   
   @objc fileprivate func movedToForeground() {
+    transitionInProgress = false
     restartTimer()
   }
   
@@ -102,7 +106,12 @@ public class DLAutoSlidePageViewController: UIPageViewController {
       currentPageIndex = 0
     }
     guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
-    setViewControllers([viewController], direction: .forward, animated: true, completion: nil)
+    if !transitionInProgress {
+      transitionInProgress = true
+      setViewControllers([viewController], direction: .forward, animated: true, completion: { finished in
+        self.transitionInProgress = !finished
+      })
+    }
   }
   
 }
