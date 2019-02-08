@@ -1,5 +1,5 @@
 PODS:
-  - DLAutoSlidePageViewController (0.2.0)
+  - DLAutoSlidePageViewController (0.4.0)
 
 DEPENDENCIES:
   - DLAutoSlidePageViewController (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  DLAutoSlidePageViewController: 7a3d413124c542c83ce98f28c299998369a6b3e7
+  DLAutoSlidePageViewController: e73b7457282272ee3d0d7fc1f596b4baa190e297
 
 PODFILE CHECKSUM: 3191da1128129c5e1073225fabaaa8682e5bec43
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

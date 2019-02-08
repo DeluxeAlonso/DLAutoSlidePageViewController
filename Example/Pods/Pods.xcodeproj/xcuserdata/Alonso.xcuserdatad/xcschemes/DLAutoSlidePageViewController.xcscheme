@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A828D960B0512D8890B9E66BC0E37E6"
+               BlueprintIdentifier = "6C810BBC208FC520D31761E3919C50A3"
                BlueprintName = "DLAutoSlidePageViewController"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "DLAutoSlidePageViewController.framework">

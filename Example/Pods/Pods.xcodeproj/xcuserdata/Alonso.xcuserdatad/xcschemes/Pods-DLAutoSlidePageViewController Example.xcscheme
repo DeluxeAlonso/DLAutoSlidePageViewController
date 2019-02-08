@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BD5299F58BC55B504CA39A6CE687C7FE"
+               BlueprintIdentifier = "58CA5D90964883CF01A3383BD1AE91C0"
                BuildableName = "Pods_DLAutoSlidePageViewController_Example.framework"
                BlueprintName = "Pods-DLAutoSlidePageViewController Example"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BD5299F58BC55B504CA39A6CE687C7FE"
+            BlueprintIdentifier = "58CA5D90964883CF01A3383BD1AE91C0"
             BuildableName = "Pods_DLAutoSlidePageViewController_Example.framework"
             BlueprintName = "Pods-DLAutoSlidePageViewController Example"
             ReferencedContainer = "container:Pods.xcodeproj">

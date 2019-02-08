@@ -26,7 +26,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
     
   deinit {
     stopTimer()
-    NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil);
+    NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil);
   }
     
   override public func viewDidLoad() {
@@ -36,10 +36,10 @@ public class DLAutoSlidePageViewController: UIPageViewController {
     setupObservers()
   }
   
-  public convenience init(pages: [UIViewController], timeInterval ti: TimeInterval = 0.0, transitionStyle: UIPageViewControllerTransitionStyle, interPageSpacing: Float = 0.0) {
+  public convenience init(pages: [UIViewController], timeInterval ti: TimeInterval = 0.0, transitionStyle: UIPageViewController.TransitionStyle, interPageSpacing: Float = 0.0) {
     self.init(transitionStyle: transitionStyle,
               navigationOrientation: .horizontal,
-              options: [UIPageViewControllerOptionInterPageSpacingKey: interPageSpacing])
+              options: [UIPageViewController.OptionsKey.interPageSpacing: interPageSpacing])
     self.pages = pages
     self.timeInterval = ti
     setupPageView()
@@ -50,7 +50,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   
   fileprivate func setupObservers() {
     let notificationCenter = NotificationCenter.default
-    notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: Notification.Name.UIApplicationWillEnterForeground, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
   
   fileprivate func setupPageView() {

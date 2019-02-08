@@ -34,7 +34,7 @@ class ViewController: UIViewController {
                                                            timeInterval: 3.0,
                                                            transitionStyle: .scroll,
                                                            interPageSpacing: 0.0)
-    addChildViewController(pageViewController)
+    addChild(pageViewController)
     containerView.addSubview(pageViewController.view)
     pageViewController.view.frame = containerView.bounds
   }
