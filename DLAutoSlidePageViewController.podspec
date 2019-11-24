@@ -14,5 +14,7 @@ An auto slide PageViewController with a customizable time interval.
  
   s.ios.deployment_target = '10.0'
   s.source_files = 'Source/DLAutoSlidePageViewController.swift'
+  s.swift_version = "5.0"
+  s.swift_versions = ['4.0', '4.2', '5.0']
  
 end
