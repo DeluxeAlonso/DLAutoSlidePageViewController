@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1110"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "58CA5D90964883CF01A3383BD1AE91C0"
+               BlueprintIdentifier = "73C7AC299F81B6D552486876CCE8CF92"
                BuildableName = "Pods_DLAutoSlidePageViewController_Example.framework"
                BlueprintName = "Pods-DLAutoSlidePageViewController Example"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -40,15 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "58CA5D90964883CF01A3383BD1AE91C0"
-            BuildableName = "Pods_DLAutoSlidePageViewController_Example.framework"
-            BlueprintName = "Pods-DLAutoSlidePageViewController Example"
-            ReferencedContainer = "container:Pods.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
