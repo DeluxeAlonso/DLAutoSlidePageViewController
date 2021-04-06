@@ -11,13 +11,12 @@ import UIKit
 public class DLAutoSlidePageViewController: UIPageViewController {
 
   private(set) var pages: [UIViewController] = []
-
-  private var timer: Timer?
-  private var timeInterval: TimeInterval = 0.0
-
-  private var currentPageIndex: Int = 0
-  private var nextPageIndex: Int = 0
-  private var transitionInProgress: Bool = false
+  
+  fileprivate var currentPageIndex: Int = 0
+  fileprivate var nextPageIndex: Int = 0
+  fileprivate var timer: Timer?
+  fileprivate var timeInterval: TimeInterval = 0.0
+  fileprivate var transitionInProgress: Bool = false
   
   public var pageControl: UIPageControl? {
     return UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
@@ -49,31 +48,31 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   
   // MARK: - Private
   
-  private func setupObservers() {
+  fileprivate func setupObservers() {
     let notificationCenter = NotificationCenter.default
     notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
   }
   
-  private func setupPageView() {
+  fileprivate func setupPageView() {
     guard let firstPage = pages.first else { return }
     currentPageIndex = 0
     setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
   }
   
-  private func setupPageControl() {
+  fileprivate func setupPageControl() {
     if self.timeInterval != 0.0 { setupPageTimer() }
     pageControl?.currentPageIndicatorTintColor = UIColor.gray
     pageControl?.pageIndicatorTintColor = UIColor.lightGray
     pageControl?.backgroundColor = UIColor.clear
   }
   
-  private func viewControllerAtIndex(_ index: Int) -> UIViewController {
+  fileprivate func viewControllerAtIndex(_ index: Int) -> UIViewController {
     guard index < pages.count else { return UIViewController() }
     currentPageIndex = index
     return pages[index]
   }
   
-  private func setupPageTimer() {
+  fileprivate func setupPageTimer() {
     timer = Timer.scheduledTimer(timeInterval: timeInterval,
                                  target: self,
                                  selector: #selector(changePage),
@@ -81,13 +80,13 @@ public class DLAutoSlidePageViewController: UIPageViewController {
                                  repeats: true)
   }
   
-  private func stopTimer() {
+  fileprivate func stopTimer() {
     guard let _ = timer as Timer? else { return }
     timer?.invalidate()
     timer = nil
   }
   
-  private func restartTimer() {
+  fileprivate func restartTimer() {
     guard self.timeInterval != 0.0 else { return }
     stopTimer()
     setupPageTimer()
@@ -95,12 +94,12 @@ public class DLAutoSlidePageViewController: UIPageViewController {
   
   // MARK: - Selectors
   
-  @objc private func movedToForeground() {
+  @objc fileprivate func movedToForeground() {
     transitionInProgress = false
     restartTimer()
   }
   
-  @objc private func changePage() {
+  @objc fileprivate func changePage() {
     if currentPageIndex < pages.count - 1 {
       currentPageIndex += 1
     } else {
