@@ -10,13 +10,14 @@ import UIKit
 
 open class DLAutoSlidePageViewController: UIPageViewController {
 
-  private(set) var pages: [UIViewController] = []
+  fileprivate(set) var pages: [UIViewController] = []
   
   fileprivate var currentPageIndex: Int = 0
   fileprivate var nextPageIndex: Int = 0
   fileprivate var timer: Timer?
   fileprivate var timeInterval: TimeInterval = 0.0
   fileprivate var transitionInProgress: Bool = false
+  fileprivate var shouldHidePageControl: Bool = false
   
   public var pageControl: UIPageControl? {
     return UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
@@ -26,7 +27,9 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     
   deinit {
     stopTimer()
-    NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil);
+    NotificationCenter.default.removeObserver(self,
+                                              name: UIApplication.willEnterForegroundNotification,
+                                              object: nil);
   }
     
   override open func viewDidLoad() {
@@ -35,13 +38,20 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     dataSource = self
     setupObservers()
   }
+
+  // MARK: - Initializers
   
-  public convenience init(pages: [UIViewController], timeInterval ti: TimeInterval = 0.0, transitionStyle: UIPageViewController.TransitionStyle, interPageSpacing: Float = 0.0) {
+  public convenience init(pages: [UIViewController],
+                          timeInterval ti: TimeInterval = 0.0,
+                          transitionStyle: UIPageViewController.TransitionStyle,
+                          interPageSpacing: Float = 0.0,
+                          hidePageControl: Bool = false) {
     self.init(transitionStyle: transitionStyle,
               navigationOrientation: .horizontal,
               options: [UIPageViewController.OptionsKey.interPageSpacing: interPageSpacing])
     self.pages = pages
     self.timeInterval = ti
+    self.shouldHidePageControl = hidePageControl
     setupPageView()
     setupPageControl()
   }
@@ -163,11 +173,11 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
   }
   
   public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-    return pages.count
+    return shouldHidePageControl ? 0 : pages.count
   }
   
   public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-    return currentPageIndex
+    return shouldHidePageControl ? 0 : currentPageIndex
   }
 
 }
