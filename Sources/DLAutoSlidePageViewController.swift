@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class DLAutoSlidePageViewController: UIPageViewController {
+open class DLAutoSlidePageViewController: UIPageViewController {
 
   private(set) var pages: [UIViewController] = []
   
@@ -29,7 +29,7 @@ public class DLAutoSlidePageViewController: UIPageViewController {
     NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil);
   }
     
-  override public func viewDidLoad() {
+  override open func viewDidLoad() {
     super.viewDidLoad()
     delegate = self
     dataSource = self
