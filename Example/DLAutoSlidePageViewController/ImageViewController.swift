@@ -9,22 +9,22 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-  
-  @IBOutlet weak public var logoImageView: UIImageView!
-  
-  var logoImage: UIImage?
-  
-  // MARK: - Lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    logoImageView.image = logoImage
-  }
-  
-  // MARK: - Public
-  
-  func setupElements(image: UIImage) {
-    logoImage = image
-  }
-  
+
+    @IBOutlet weak public var logoImageView: UIImageView!
+
+    private var logoImage: UIImage?
+
+    // MARK: - Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        logoImageView.image = logoImage
+    }
+
+    // MARK: - Public
+
+    func setupElements(image: UIImage) {
+        logoImage = image
+    }
+
 }
