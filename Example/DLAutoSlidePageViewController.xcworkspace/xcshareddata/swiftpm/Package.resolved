@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MaterialPageControl",
+        "repositoryURL": "https://github.com/DeluxeAlonso/MaterialPageControl.git",
+        "state": {
+          "branch": null,
+          "revision": "f77350fb15c722d36a6f644032c276502fb71fd2",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
