@@ -19,11 +19,21 @@ DLAutoSlidePageViewController requires iOS 10.0 and Swift 4.0 or above.
 
 ## Installation
 
+### CocoaPods
+
 PageViewController is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "DLAutoSlidePageViewController"
+```
+
+### Swift Package Manager
+
+To integrate using [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your Package.swift:
+
+```Swift
+.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.0.2"))
 ```
 
 ## Usage
