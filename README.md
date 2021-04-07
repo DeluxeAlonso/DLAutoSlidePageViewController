@@ -28,23 +28,54 @@ pod "DLAutoSlidePageViewController"
 
 ## Usage
 
-1) Create an instance of a `DLAutoSlidePageViewController` and provide it with an array of View controllers.
+1) Create an instance of `DLAutoSlidePageViewController` and provide it with an array of `UIViewController`'s.
 
 ```swift
 let firstVC = storyboard?.instantiateViewController(withIdentifier: 'FirstVC')
 let secondVC = storyboard?.instantiateViewController(withIdentifier: 'SecondVC')
 let pages = [firstVC, secondVC]
 
-let pageViewController = DLAutoSlidePageViewController(pages: pages,
-                                                       timeInterval: 3.0,
-                                                       transitionStyle: .scroll,
-                                                       interPageSpacing: 0.0)
+let pageViewController = DLAutoSlidePageViewController(pages: pages)
                                                        
 addChildViewController(pageViewController)
 containerView.addSubview(pageViewController.view)
 pageViewController.view.frame = containerView.bounds
 ```
-2) You can also access the UIPageControl through the `pageControl` property.
+
+## Appearance and presentation configuration
+
+There are two ways to configure the appearance and presentation of `DLAutoSlidePageViewController`:
+
+1) You can do it globally using the `DefaultAutoSlideConfiguration` class before instantiation.
+
+```swift
+let pages = [firstVC, secondVC]
+
+DefaultAutoSlideConfiguration.shared.timeInterval = 5.0
+DefaultAutoSlideConfiguration.shared.interPageSpacing = 3.0
+DefaultAutoSlideConfiguration.shared.hidePageControl = false
+let pageViewController = DLAutoSlidePageViewController(pages: pages)
+```
+
+2) You can create your own configuration instance that conforms to `AutoSlideConfiguration` protocol and pass it on the `DLAutoSlidePageViewController`'s initializer.
+
+```swift
+struct CustomConfiguration: AutoSlideConfiguration {
+    .
+    .
+    .
+}
+```
+
+```swift
+let pages = [firstVC, secondVC]
+
+let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: CustomConfiguration())
+```
+
+## Notes
+
+You can also access the UIPageControl through the `pageControl` property.
 
 ```swift
 pageViewController.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
