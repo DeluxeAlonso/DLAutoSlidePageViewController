@@ -30,10 +30,12 @@ class ViewController: UIViewController {
 
     private func setupPageViewController() {
         let pages: [UIViewController] = setupPages()
-        let pageViewController = DLAutoSlidePageViewController(pages: pages,
-                                                               timeInterval: 3.0,
-                                                               transitionStyle: .scroll,
-                                                               interPageSpacing: 0.0)
+
+        // Configure default auto slide page configuration
+        DefaultAutoSlideConfiguration.shared.timeInterval = 3.0
+        DefaultAutoSlideConfiguration.shared.hidePageControl = true
+        let pageViewController = DLAutoSlidePageViewController(pages: pages)
+        
         addChild(pageViewController)
         containerView.addSubview(pageViewController.view)
         pageViewController.view.frame = containerView.bounds
