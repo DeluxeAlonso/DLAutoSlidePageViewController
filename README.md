@@ -61,15 +61,13 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages)
 
 ```swift
 struct CustomConfiguration: AutoSlideConfiguration {
-    .
-    .
-    .
+    var timeInterval: TimeInterval = 10.0
+    var navigationOrientation: UIPageViewController.NavigationOrientation = .vertical
 }
 ```
 
 ```swift
 let pages = [firstVC, secondVC]
-
 let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: CustomConfiguration())
 ```
 
