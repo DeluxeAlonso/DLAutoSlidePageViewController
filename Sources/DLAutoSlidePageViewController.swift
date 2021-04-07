@@ -44,7 +44,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     public convenience init(pages: [UIViewController],
                             configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
         self.init(transitionStyle: configuration.transitionStyle,
-                  navigationOrientation: .horizontal,
+                  navigationOrientation: configuration.navigationOrientation,
                   options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing])
         self.pages = pages
         self.timeInterval = configuration.timeInterval
@@ -104,13 +104,13 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     fileprivate func stopTimer() {
-        guard let _ = timer as Timer? else { return }
+        guard let _ = timer else { return }
         timer?.invalidate()
         timer = nil
     }
 
     fileprivate func restartTimer() {
-        guard self.timeInterval != 0.0 else { return }
+        guard timeInterval != 0.0 else { return }
         stopTimer()
         setupPageTimer()
     }
@@ -144,7 +144,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
 
     public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        guard let viewController = pendingViewControllers.first as UIViewController?, let index = pages.firstIndex(of: viewController) as Int? else {
+        guard let viewController = pendingViewControllers.first,
+              let index = pages.firstIndex(of: viewController) else {
             return
         }
         nextPageIndex = index
@@ -165,7 +166,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
 
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         restartTimer()
-        guard var currentIndex = pages.firstIndex(of: viewController) as Int? else { return nil }
+        guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex > 0 {
             currentIndex = (currentIndex - 1) % pages.count
             return pages[currentIndex]
@@ -176,7 +177,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
 
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         restartTimer()
-        guard var currentIndex = pages.firstIndex(of: viewController) as Int? else { return nil }
+        guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex < pages.count - 1 {
             currentIndex = (currentIndex + 1) % pages.count
             return pages[currentIndex]

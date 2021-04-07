@@ -11,6 +11,7 @@ public protocol AutoSlideConfiguration {
 
     var timeInterval: TimeInterval { get }
     var transitionStyle: UIPageViewController.TransitionStyle { get }
+    var navigationOrientation: UIPageViewController.NavigationOrientation { get }
     var interPageSpacing: Float { get }
     var hidePageControl: Bool { get }
 
