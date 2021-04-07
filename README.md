@@ -28,7 +28,7 @@ pod "DLAutoSlidePageViewController"
 
 ## Usage
 
-1) Create an instance of `DLAutoSlidePageViewController` and provide it with an array of `UIViewController`'s.
+Create an instance of `DLAutoSlidePageViewController` and provide it with an array of `UIViewController`'s.
 
 ```swift
 let firstVC = storyboard?.instantiateViewController(withIdentifier: 'FirstVC')
