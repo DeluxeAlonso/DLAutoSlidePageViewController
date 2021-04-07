@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,23 +19,13 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03X-Cc-7LE">
                                 <rect key="frame" x="0.0" y="167" width="375" height="333.5"/>
                             </containerView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c9l-1t-INW" customClass="MaterialPageControl" customModule="MaterialPageControl">
-                                <rect key="frame" x="16" y="516.5" width="343" height="36"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="87w-Bn-eJm"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="03X-Cc-7LE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3A5-5m-yXg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c9l-1t-INW" secondAttribute="trailing" constant="16" id="8ve-yq-Gok"/>
                             <constraint firstItem="03X-Cc-7LE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="dA5-qs-oV0"/>
-                            <constraint firstItem="c9l-1t-INW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lVF-cP-mp8"/>
                             <constraint firstItem="03X-Cc-7LE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pO2-JF-GZK"/>
-                            <constraint firstItem="c9l-1t-INW" firstAttribute="top" secondItem="03X-Cc-7LE" secondAttribute="bottom" constant="16" id="vpa-WI-6tY"/>
                             <constraint firstItem="03X-Cc-7LE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="yda-Gc-UoF"/>
                         </constraints>
                     </view>
@@ -81,8 +70,5 @@
     </scenes>
     <resources>
         <image name="ChromeIcon" width="150" height="150"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
