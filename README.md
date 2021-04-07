@@ -33,7 +33,7 @@ pod "DLAutoSlidePageViewController"
 To integrate using [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your Package.swift:
 
 ```Swift
-.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.0.2"))
+.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.1.0"))
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ let pages = [firstVC, secondVC]
 let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: CustomConfiguration())
 ```
 
-## Notes
+## Page control configuration
 
 You can also access the UIPageControl through the `pageControl` property.
 
