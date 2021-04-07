@@ -16,3 +16,15 @@ public protocol AutoSlideConfiguration {
     var hidePageControl: Bool { get }
 
 }
+
+// MARK: - Default values
+
+public extension AutoSlideConfiguration {
+
+    var timeInterval: TimeInterval { 3.0 }
+    var transitionStyle: UIPageViewController.TransitionStyle { .scroll }
+    var navigationOrientation: UIPageViewController.NavigationOrientation { .horizontal }
+    var interPageSpacing: Float { 0.0 }
+    var hidePageControl: Bool { false }
+
+}
