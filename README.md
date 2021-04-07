@@ -67,7 +67,7 @@ DefaultAutoSlideConfiguration.shared.hidePageControl = false
 let pageViewController = DLAutoSlidePageViewController(pages: pages)
 ```
 
-2) You can create your own configuration instance that conforms to `AutoSlideConfiguration` protocol and pass it on the `DLAutoSlidePageViewController`'s initializer.
+2) You can create your own configuration instance that conforms to `AutoSlideConfiguration` protocol and pass it on `DLAutoSlidePageViewController`'s initializer.
 
 ```swift
 struct CustomConfiguration: AutoSlideConfiguration {
