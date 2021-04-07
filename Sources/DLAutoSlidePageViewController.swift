@@ -19,8 +19,42 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     fileprivate var transitionInProgress: Bool = false
     fileprivate var shouldHidePageControl: Bool = false
 
+    // MARK: - Computed properties
+
     public var pageControl: UIPageControl? {
         return UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
+    }
+
+    // MARK: - Initializers
+
+    public convenience init(pages: [UIViewController],
+                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
+        self.init(transitionStyle: configuration.transitionStyle,
+                  navigationOrientation: configuration.navigationOrientation,
+                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing])
+        self.pages = pages
+        self.timeInterval = configuration.timeInterval
+        self.shouldHidePageControl = configuration.hidePageControl
+
+        setupPageView()
+        setupPageTimer(with: timeInterval)
+        setupPageControl(with: configuration)
+    }
+
+    public convenience init(pages: [UIViewController],
+                            timeInterval ti: TimeInterval = 0.0,
+                            transitionStyle: UIPageViewController.TransitionStyle,
+                            interPageSpacing: Float = 0.0,
+                            hidePageControl: Bool = false) {
+        self.init(transitionStyle: transitionStyle,
+                  navigationOrientation: .horizontal,
+                  options: [UIPageViewController.OptionsKey.interPageSpacing: interPageSpacing])
+        self.pages = pages
+        self.timeInterval = ti
+        self.shouldHidePageControl = hidePageControl
+        setupPageView()
+        setupPageTimer(with: timeInterval)
+        setupPageControl(with: DefaultAutoSlideConfiguration.shared)
     }
 
     // MARK: - Lifecycle
@@ -39,36 +73,6 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setupObservers()
     }
 
-    // MARK: - Initializers
-
-    public convenience init(pages: [UIViewController],
-                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
-        self.init(transitionStyle: configuration.transitionStyle,
-                  navigationOrientation: configuration.navigationOrientation,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing])
-        self.pages = pages
-        self.timeInterval = configuration.timeInterval
-        self.shouldHidePageControl = configuration.hidePageControl
-
-        setupPageView()
-        setupPageControl()
-    }
-
-    public convenience init(pages: [UIViewController],
-                            timeInterval ti: TimeInterval = 0.0,
-                            transitionStyle: UIPageViewController.TransitionStyle,
-                            interPageSpacing: Float = 0.0,
-                            hidePageControl: Bool = false) {
-        self.init(transitionStyle: transitionStyle,
-                  navigationOrientation: .horizontal,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: interPageSpacing])
-        self.pages = pages
-        self.timeInterval = ti
-        self.shouldHidePageControl = hidePageControl
-        setupPageView()
-        setupPageControl()
-    }
-
     // MARK: - Private
 
     fileprivate func setupObservers() {
@@ -82,11 +86,10 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
     }
 
-    fileprivate func setupPageControl() {
-        if self.timeInterval != 0.0 { setupPageTimer() }
-        pageControl?.currentPageIndicatorTintColor = UIColor.gray
-        pageControl?.pageIndicatorTintColor = UIColor.lightGray
-        pageControl?.backgroundColor = UIColor.clear
+    fileprivate func setupPageControl(with configuration: AutoSlideConfiguration) {
+        pageControl?.currentPageIndicatorTintColor = configuration.pageControlCurrentPageIndicatorTintColor
+        pageControl?.pageIndicatorTintColor = configuration.pageControlPageIndicatorTintColor
+        pageControl?.backgroundColor = configuration.pageControlBackgroundColor
     }
 
     fileprivate func viewControllerAtIndex(_ index: Int) -> UIViewController {
@@ -95,7 +98,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         return pages[index]
     }
 
-    fileprivate func setupPageTimer() {
+    fileprivate func setupPageTimer(with timeInterval: TimeInterval) {
+        guard timeInterval != 0.0 else { return }
         timer = Timer.scheduledTimer(timeInterval: timeInterval,
                                      target: self,
                                      selector: #selector(changePage),
@@ -110,9 +114,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     fileprivate func restartTimer() {
-        guard timeInterval != 0.0 else { return }
         stopTimer()
-        setupPageTimer()
+        setupPageTimer(with: timeInterval)
     }
 
     // MARK: - Selectors
