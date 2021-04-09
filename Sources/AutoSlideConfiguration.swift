@@ -24,10 +24,13 @@ public protocol AutoSlideConfiguration {
     /// Decides if page contron is going to be shown or not.
     var hidePageControl: Bool { get }
 
+    /// The tint color to be used for the current page indicator.
     var pageControlCurrentPageIndicatorTintColor: UIColor { get }
 
+    /// The tint color to be used for the page indicator.
     var pageControlPageIndicatorTintColor: UIColor { get }
 
+    /// The background color to be used for the page control.
     var pageControlBackgroundColor: UIColor { get }
 
 }
