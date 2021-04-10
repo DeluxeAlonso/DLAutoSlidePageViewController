@@ -33,7 +33,7 @@ pod "DLAutoSlidePageViewController"
 To integrate using [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your Package.swift:
 
 ```Swift
-.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.1.0"))
+.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.2.0"))
 ```
 
 ## Usage
