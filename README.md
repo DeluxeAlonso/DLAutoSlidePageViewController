@@ -81,15 +81,20 @@ let pages = [firstVC, secondVC]
 let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: CustomConfiguration())
 ```
 
-## Page control configuration
+## Available configuration properties
 
-You can also access the UIPageControl through the `pageControl` property.
+`DLAutoSlidePageViewController` can be customized via the following properties:
 
-```swift
-pageViewController.pageControl.currentPageIndicatorTintColor = UIColor.lightGray
-pageViewController.pageControl.pageIndicatorTintColor = UIColor.gray
-pageViewController.pageControl.backgroundColor = UIColor.clear
-```
+| Property   |      Type      | Description |
+|----------|:-------------:|------|
+| timeInterval |  TimeInterval | Time interval to be used for each page automatic transition. |
+| transitionStyle | UIPageViewController.TransitionStyle | Styles for the page-turn transition. |
+| navigationOrientation | UIPageViewController.NavigationOrientation | Orientations for page-turn transitions. |
+| interPageSpacing | Float | Space between pages. |
+| hidePageControl | Bool | Decides if page contron is going to be shown or not. |
+| currentPageIndicatorTintColor | UIColor | The tint color to be used for the current page indicator. |
+| pageIndicatorTintColor | UIColor | The tint color to be used for the page indicator. |
+| pageControlBackgroundColor | UIColor | The background color to be used for the page control. |
 
 ## Author
 
