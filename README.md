@@ -86,7 +86,7 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 `DLAutoSlidePageViewController` can be customized via the following properties:
 
 | Property   |      Type      | Description |
-|----------|:-------------:|------|
+|:----------:|:-------------:|------|
 | timeInterval |  TimeInterval | Time interval to be used for each page automatic transition. |
 | transitionStyle | UIPageViewController.TransitionStyle | Styles for the page-turn transition. |
 | navigationOrientation | UIPageViewController.NavigationOrientation | Orientations for page-turn transitions. |
