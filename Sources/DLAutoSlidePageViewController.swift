@@ -87,8 +87,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     fileprivate func setupPageControl(with configuration: AutoSlideConfiguration) {
-        pageControl?.currentPageIndicatorTintColor = configuration.pageControlCurrentPageIndicatorTintColor
-        pageControl?.pageIndicatorTintColor = configuration.pageControlPageIndicatorTintColor
+        pageControl?.currentPageIndicatorTintColor = configuration.currentPageIndicatorTintColor
+        pageControl?.pageIndicatorTintColor = configuration.pageIndicatorTintColor
         pageControl?.backgroundColor = configuration.pageControlBackgroundColor
     }
 

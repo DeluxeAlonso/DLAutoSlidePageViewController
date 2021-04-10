@@ -25,10 +25,10 @@ public protocol AutoSlideConfiguration {
     var hidePageControl: Bool { get }
 
     /// The tint color to be used for the current page indicator.
-    var pageControlCurrentPageIndicatorTintColor: UIColor { get }
+    var currentPageIndicatorTintColor: UIColor { get }
 
     /// The tint color to be used for the page indicator.
-    var pageControlPageIndicatorTintColor: UIColor { get }
+    var pageIndicatorTintColor: UIColor { get }
 
     /// The background color to be used for the page control.
     var pageControlBackgroundColor: UIColor { get }
@@ -45,8 +45,8 @@ public extension AutoSlideConfiguration {
     var interPageSpacing: Float { 0.0 }
     var hidePageControl: Bool { false }
 
-    var pageControlCurrentPageIndicatorTintColor: UIColor { UIColor.gray }
-    var pageControlPageIndicatorTintColor: UIColor { UIColor.lightGray }
+    var currentPageIndicatorTintColor: UIColor { UIColor.gray }
+    var pageIndicatorTintColor: UIColor { UIColor.lightGray }
     var pageControlBackgroundColor: UIColor { UIColor.clear }
 
 }
