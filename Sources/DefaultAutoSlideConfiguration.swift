@@ -19,6 +19,11 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var transitionStyle: UIPageViewController.TransitionStyle = .scroll
     public var navigationOrientation: UIPageViewController.NavigationOrientation = .horizontal
     public var interPageSpacing: Float = 0.0
+    public var spineLocation: UIPageViewController.SpineLocation = .none
     public var hidePageControl: Bool = false
+
+    public var currentPageIndicatorTintColor: UIColor = UIColor.gray
+    public var pageIndicatorTintColor: UIColor = UIColor.lightGray
+    public var pageControlBackgroundColor: UIColor = UIColor.clear
 
 }
