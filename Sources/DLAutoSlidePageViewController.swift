@@ -31,7 +31,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
                             configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
         self.init(transitionStyle: configuration.transitionStyle,
                   navigationOrientation: configuration.navigationOrientation,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing])
+                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
+                            UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
         self.pages = pages
         self.timeInterval = configuration.timeInterval
         self.shouldHidePageControl = configuration.hidePageControl
@@ -41,6 +42,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setupPageControl(with: configuration)
     }
 
+    @available(*, deprecated, message: "Use convenience initializer that receives an AutoSlideConfiguration instead.")
     public convenience init(pages: [UIViewController],
                             timeInterval ti: TimeInterval = 0.0,
                             transitionStyle: UIPageViewController.TransitionStyle,
