@@ -21,4 +21,8 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var interPageSpacing: Float = 0.0
     public var hidePageControl: Bool = false
 
+    public var currentPageIndicatorTintColor: UIColor = UIColor.gray
+    public var pageIndicatorTintColor: UIColor = UIColor.lightGray
+    public var pageControlBackgroundColor: UIColor = UIColor.clear
+
 }

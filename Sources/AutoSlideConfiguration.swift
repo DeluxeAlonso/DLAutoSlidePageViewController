@@ -21,6 +21,9 @@ public protocol AutoSlideConfiguration {
     /// Space between pages.
     var interPageSpacing: Float { get }
 
+    /// Locations for the spine. Only valid if the transition style is UIPageViewController.TransitionStyle.pageCurl.
+    var spineLocation: UIPageViewController.SpineLocation { get }
+
     /// Decides if page contron is going to be shown or not.
     var hidePageControl: Bool { get }
 
@@ -43,6 +46,7 @@ public extension AutoSlideConfiguration {
     var transitionStyle: UIPageViewController.TransitionStyle { .scroll }
     var navigationOrientation: UIPageViewController.NavigationOrientation { .horizontal }
     var interPageSpacing: Float { 0.0 }
+    var spineLocation: UIPageViewController.SpineLocation { .none }
     var hidePageControl: Bool { false }
 
     var currentPageIndicatorTintColor: UIColor { UIColor.gray }
