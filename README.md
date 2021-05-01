@@ -91,7 +91,8 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | transitionStyle | UIPageViewController.TransitionStyle | Styles for the page-turn transition. |
 | navigationOrientation | UIPageViewController.NavigationOrientation | Orientations for page-turn transitions. |
 | interPageSpacing | Float | Space between pages. |
-| hidePageControl | Bool | Decides if page contron is going to be shown or not. |
+| spineLocation | UIPageViewController.SpineLocation | Locations for the spine. Only valid if the transition style is UIPageViewController.TransitionStyle.pageCurl. |
+| hidePageControl | Bool | Decides if page control is going to be shown or not. |
 | currentPageIndicatorTintColor | UIColor | The tint color to be used for the current page indicator. |
 | pageIndicatorTintColor | UIColor | The tint color to be used for the page indicator. |
 | pageControlBackgroundColor | UIColor | The background color to be used for the page control. |
