@@ -10,14 +10,14 @@ import UIKit
 
 open class DLAutoSlidePageViewController: UIPageViewController {
 
-    fileprivate(set) var pages: [UIViewController] = []
+    private(set) var pages: [UIViewController] = []
 
-    fileprivate var currentPageIndex: Int = 0
-    fileprivate var nextPageIndex: Int = 0
-    fileprivate var timer: Timer?
-    fileprivate var timeInterval: TimeInterval = 0.0
-    fileprivate var transitionInProgress: Bool = false
-    fileprivate var shouldHidePageControl: Bool = false
+    private var currentPageIndex: Int = 0
+    private var nextPageIndex: Int = 0
+    private var timer: Timer?
+    private var timeInterval: TimeInterval = 0.0
+    private var transitionInProgress: Bool = false
+    private var shouldHidePageControl: Bool = false
 
     // MARK: - Computed properties
 
@@ -77,30 +77,30 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Private
 
-    fileprivate func setupObservers() {
+    private func setupObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
-    fileprivate func setupPageView() {
+    private func setupPageView() {
         guard let firstPage = pages.first else { return }
         currentPageIndex = 0
         setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
     }
 
-    fileprivate func setupPageControl(with configuration: AutoSlideConfiguration) {
+    private func setupPageControl(with configuration: AutoSlideConfiguration) {
         pageControl?.currentPageIndicatorTintColor = configuration.currentPageIndicatorTintColor
         pageControl?.pageIndicatorTintColor = configuration.pageIndicatorTintColor
         pageControl?.backgroundColor = configuration.pageControlBackgroundColor
     }
 
-    fileprivate func viewControllerAtIndex(_ index: Int) -> UIViewController {
+    private func viewControllerAtIndex(_ index: Int) -> UIViewController {
         guard index < pages.count else { return UIViewController() }
         currentPageIndex = index
         return pages[index]
     }
 
-    fileprivate func setupPageTimer(with timeInterval: TimeInterval) {
+    private func setupPageTimer(with timeInterval: TimeInterval) {
         guard timeInterval != 0.0 else { return }
         timer = Timer.scheduledTimer(timeInterval: timeInterval,
                                      target: self,
@@ -109,25 +109,25 @@ open class DLAutoSlidePageViewController: UIPageViewController {
                                      repeats: true)
     }
 
-    fileprivate func stopTimer() {
+    private func stopTimer() {
         guard let _ = timer else { return }
         timer?.invalidate()
         timer = nil
     }
 
-    fileprivate func restartTimer() {
+    private func restartTimer() {
         stopTimer()
         setupPageTimer(with: timeInterval)
     }
 
     // MARK: - Selectors
 
-    @objc fileprivate func movedToForeground() {
+    @objc private func movedToForeground() {
         transitionInProgress = false
         restartTimer()
     }
 
-    @objc fileprivate func changePage() {
+    @objc private func changePage() {
         if currentPageIndex < pages.count - 1 {
             currentPageIndex += 1
         } else {
