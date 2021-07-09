@@ -18,6 +18,9 @@ public protocol AutoSlideConfiguration {
     /// Orientations for page-turn transitions.
     var navigationOrientation: UIPageViewController.NavigationOrientation { get }
 
+    /// Directions for page-turn transitions.
+    var navigationDirection: UIPageViewController.NavigationDirection { get }
+
     /// Space between pages.
     var interPageSpacing: Float { get }
 
@@ -45,6 +48,7 @@ public extension AutoSlideConfiguration {
     var timeInterval: TimeInterval { 3.0 }
     var transitionStyle: UIPageViewController.TransitionStyle { .scroll }
     var navigationOrientation: UIPageViewController.NavigationOrientation { .horizontal }
+    var navigationDirection: UIPageViewController.NavigationDirection { .forward }
     var interPageSpacing: Float { 0.0 }
     var spineLocation: UIPageViewController.SpineLocation { .none }
     var hidePageControl: Bool { false }
