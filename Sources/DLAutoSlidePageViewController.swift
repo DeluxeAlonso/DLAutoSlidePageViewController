@@ -10,7 +10,7 @@ import UIKit
 
 open class DLAutoSlidePageViewController: UIPageViewController {
 
-    private(set) var pages: [UIViewController] = []
+    private var pages: [UIViewController] = []
 
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
@@ -137,7 +137,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         if !transitionInProgress {
             transitionInProgress = true
             setViewControllers([viewController], direction: .forward, animated: true, completion: { finished in
-                self.transitionInProgress = !finished
+                self.transitionInProgress = false
             })
         }
     }
