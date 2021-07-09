@@ -15,9 +15,12 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
     private var timer: Timer?
+
     private var timeInterval: TimeInterval = 0.0
-    private var transitionInProgress: Bool = false
     private var shouldHidePageControl: Bool = false
+    private var navigationDirection: UIPageViewController.NavigationDirection = .forward
+
+    private var transitionInProgress: Bool = false
 
     // MARK: - Computed properties
 
@@ -34,8 +37,10 @@ open class DLAutoSlidePageViewController: UIPageViewController {
                   options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
                             UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
         self.pages = pages
+
         self.timeInterval = configuration.timeInterval
         self.shouldHidePageControl = configuration.hidePageControl
+        self.navigationDirection = configuration.navigationDirection
 
         setupPageView()
         setupPageTimer(with: timeInterval)
@@ -85,7 +90,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private func setupPageView() {
         guard let firstPage = pages.first else { return }
         currentPageIndex = 0
-        setViewControllers([firstPage], direction: .forward, animated: true, completion: nil)
+        setViewControllers([firstPage], direction: navigationDirection, animated: true, completion: nil)
     }
 
     private func setupPageControl(with configuration: AutoSlideConfiguration) {
@@ -136,7 +141,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
         if !transitionInProgress {
             transitionInProgress = true
-            setViewControllers([viewController], direction: .forward, animated: true, completion: { finished in
+            setViewControllers([viewController], direction: navigationDirection, animated: true, completion: { finished in
                 self.transitionInProgress = false
             })
         }
