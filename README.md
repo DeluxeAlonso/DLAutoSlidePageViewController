@@ -90,6 +90,7 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | timeInterval |  TimeInterval | Time interval to be used for each page automatic transition. |
 | transitionStyle | UIPageViewController.TransitionStyle | Styles for the page-turn transition. |
 | navigationOrientation | UIPageViewController.NavigationOrientation | Orientations for page-turn transitions. |
+| navigationDirection | UIPageViewController.NavigationDirection | Directions for page-turn transitions. |
 | interPageSpacing | Float | Space between pages. |
 | spineLocation | UIPageViewController.SpineLocation | Locations for the spine. Only valid if the transition style is UIPageViewController.TransitionStyle.pageCurl. |
 | hidePageControl | Bool | Decides if page control is going to be shown or not. |
