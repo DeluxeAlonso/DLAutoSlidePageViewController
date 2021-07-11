@@ -16,7 +16,7 @@
 		664D3991F9141C16D6EA21E756F87FF2 /* AutoSlideConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90EFDA331852780D0EE8805CD8B7B /* AutoSlideConfiguration.swift */; };
 		9CEAE55E9569C5451CA65ABA3765378B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		9FE73A71A4B3BD25B6D32FFC99B46883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		E27B84BA269AD5DB00BB39D7 /* AutoSlideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */; };
+		E268787D269BB12D00C63186 /* AutoSlideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E268787C269BB12D00C63186 /* AutoSlideHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		D9F31ACE498732F5F6EE8BBDA4681175 /* DLAutoSlidePageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DLAutoSlidePageViewController.swift; path = Sources/DLAutoSlidePageViewController.swift; sourceTree = "<group>"; };
 		DC68CA978B9BECBC6EF830C65F369642 /* DLAutoSlidePageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLAutoSlidePageViewController.modulemap; sourceTree = "<group>"; };
 		DE137974C36B1F5C84E5F9785564E5DF /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; sourceTree = "<group>"; };
-		E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSlideHelper.swift; sourceTree = "<group>"; };
+		E268787C269BB12D00C63186 /* AutoSlideHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoSlideHelper.swift; path = Sources/AutoSlideHelper.swift; sourceTree = "<group>"; };
 		E9045BD7C63975F9B953AA3EDA1D62ED /* DLAutoSlidePageViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-umbrella.h"; sourceTree = "<group>"; };
 		EAEDEFE6DBC73AE22929456D3275B7A8 /* DLAutoSlidePageViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,12 +125,12 @@
 		C29724712C6904EF8DE93BC6B4285DC7 /* DLAutoSlidePageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E268787C269BB12D00C63186 /* AutoSlideHelper.swift */,
 				90E90EFDA331852780D0EE8805CD8B7B /* AutoSlideConfiguration.swift */,
 				B403E2AD8C59B88B7AC8D935227315CC /* DefaultAutoSlideConfiguration.swift */,
 				D9F31ACE498732F5F6EE8BBDA4681175 /* DLAutoSlidePageViewController.swift */,
 				66B507DF6A587FF4B7ACB45F236AFA4F /* Pod */,
 				DE00B9F29B4A658BA202EB786030399D /* Support Files */,
-				E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */,
 			);
 			name = DLAutoSlidePageViewController;
 			path = ../..;
@@ -305,7 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				664D3991F9141C16D6EA21E756F87FF2 /* AutoSlideConfiguration.swift in Sources */,
-				E27B84BA269AD5DB00BB39D7 /* AutoSlideHelper.swift in Sources */,
+				E268787D269BB12D00C63186 /* AutoSlideHelper.swift in Sources */,
 				00CADED749FDF58827498C5701397E08 /* DefaultAutoSlideConfiguration.swift in Sources */,
 				53CD553D44050556F61BAB49EA51A6BF /* DLAutoSlidePageViewController-dummy.m in Sources */,
 				5219658C939FC70180628D6E41752462 /* DLAutoSlidePageViewController.swift in Sources */,
