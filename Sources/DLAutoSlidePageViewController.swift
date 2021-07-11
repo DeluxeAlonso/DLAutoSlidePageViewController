@@ -133,11 +133,9 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     @objc private func changePage() {
-        if currentPageIndex < pages.count - 1 {
-            currentPageIndex += 1
-        } else {
-            currentPageIndex = 0
-        }
+        currentPageIndex = AutoSlideHelper.pageIndex(for: currentPageIndex,
+                                                     totalPageCount: pages.count,
+                                                     direction: navigationDirection)
         guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
         if !transitionInProgress {
             transitionInProgress = true

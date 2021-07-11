@@ -16,6 +16,7 @@
 		664D3991F9141C16D6EA21E756F87FF2 /* AutoSlideConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E90EFDA331852780D0EE8805CD8B7B /* AutoSlideConfiguration.swift */; };
 		9CEAE55E9569C5451CA65ABA3765378B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		9FE73A71A4B3BD25B6D32FFC99B46883 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E27B84BA269AD5DB00BB39D7 /* AutoSlideHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,21 +39,22 @@
 		372DE4C08CC282D920921A34B5109D06 /* Pods-DLAutoSlidePageViewController Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DLAutoSlidePageViewController Example-frameworks.sh"; sourceTree = "<group>"; };
 		447C75119D623A228A3FAAE74CD8A027 /* DLAutoSlidePageViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DLAutoSlidePageViewController-Info.plist"; sourceTree = "<group>"; };
 		4844082F6FA57C68A8218D2E261617C6 /* DLAutoSlidePageViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DLAutoSlidePageViewController.debug.xcconfig; sourceTree = "<group>"; };
-		60AD8DB0E1367FE5E52CEA71C1A48AAA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		72C3E605083DD1F1DF7DE790F0961593 /* DLAutoSlidePageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DLAutoSlidePageViewController.framework; path = DLAutoSlidePageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		60AD8DB0E1367FE5E52CEA71C1A48AAA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		72C3E605083DD1F1DF7DE790F0961593 /* DLAutoSlidePageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DLAutoSlidePageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		90E90EFDA331852780D0EE8805CD8B7B /* AutoSlideConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AutoSlideConfiguration.swift; path = Sources/AutoSlideConfiguration.swift; sourceTree = "<group>"; };
-		977B4B9729D28650FEAB25F99F13B64F /* DLAutoSlidePageViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DLAutoSlidePageViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		977B4B9729D28650FEAB25F99F13B64F /* DLAutoSlidePageViewController.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DLAutoSlidePageViewController.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A59DD88EAE2E5F2BE1FEE08E5B1BBEF6 /* Pods-DLAutoSlidePageViewController Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DLAutoSlidePageViewController Example-umbrella.h"; sourceTree = "<group>"; };
 		A849C9E5763763966F469812F22856DF /* DLAutoSlidePageViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DLAutoSlidePageViewController-dummy.m"; sourceTree = "<group>"; };
-		ABB1B551650CD5A96ECF46580855589C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		ABB1B551650CD5A96ECF46580855589C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B0AD21977CB12429D3A0A6785AA1A343 /* Pods-DLAutoSlidePageViewController Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DLAutoSlidePageViewController Example-Info.plist"; sourceTree = "<group>"; };
-		B1A017D5C355C1C89C853F86B24738F6 /* Pods_DLAutoSlidePageViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DLAutoSlidePageViewController_Example.framework; path = "Pods-DLAutoSlidePageViewController Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1A017D5C355C1C89C853F86B24738F6 /* Pods_DLAutoSlidePageViewController_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DLAutoSlidePageViewController_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B403E2AD8C59B88B7AC8D935227315CC /* DefaultAutoSlideConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultAutoSlideConfiguration.swift; path = Sources/DefaultAutoSlideConfiguration.swift; sourceTree = "<group>"; };
 		D9F31ACE498732F5F6EE8BBDA4681175 /* DLAutoSlidePageViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DLAutoSlidePageViewController.swift; path = Sources/DLAutoSlidePageViewController.swift; sourceTree = "<group>"; };
 		DC68CA978B9BECBC6EF830C65F369642 /* DLAutoSlidePageViewController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DLAutoSlidePageViewController.modulemap; sourceTree = "<group>"; };
 		DE137974C36B1F5C84E5F9785564E5DF /* Pods-DLAutoSlidePageViewController Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DLAutoSlidePageViewController Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSlideHelper.swift; sourceTree = "<group>"; };
 		E9045BD7C63975F9B953AA3EDA1D62ED /* DLAutoSlidePageViewController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-umbrella.h"; sourceTree = "<group>"; };
 		EAEDEFE6DBC73AE22929456D3275B7A8 /* DLAutoSlidePageViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DLAutoSlidePageViewController-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +130,7 @@
 				D9F31ACE498732F5F6EE8BBDA4681175 /* DLAutoSlidePageViewController.swift */,
 				66B507DF6A587FF4B7ACB45F236AFA4F /* Pod */,
 				DE00B9F29B4A658BA202EB786030399D /* Support Files */,
+				E27B84B9269AD5DB00BB39D7 /* AutoSlideHelper.swift */,
 			);
 			name = DLAutoSlidePageViewController;
 			path = ../..;
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				664D3991F9141C16D6EA21E756F87FF2 /* AutoSlideConfiguration.swift in Sources */,
+				E27B84BA269AD5DB00BB39D7 /* AutoSlideHelper.swift in Sources */,
 				00CADED749FDF58827498C5701397E08 /* DefaultAutoSlideConfiguration.swift in Sources */,
 				53CD553D44050556F61BAB49EA51A6BF /* DLAutoSlidePageViewController-dummy.m in Sources */,
 				5219658C939FC70180628D6E41752462 /* DLAutoSlidePageViewController.swift in Sources */,
@@ -471,8 +475,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
