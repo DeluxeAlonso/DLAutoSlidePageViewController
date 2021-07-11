@@ -18,6 +18,7 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var timeInterval: TimeInterval = 3.0
     public var transitionStyle: UIPageViewController.TransitionStyle = .scroll
     public var navigationOrientation: UIPageViewController.NavigationOrientation = .horizontal
+    public var navigationDirection: UIPageViewController.NavigationDirection = .forward
     public var interPageSpacing: Float = 0.0
     public var spineLocation: UIPageViewController.SpineLocation = .none
     public var hidePageControl: Bool = false
