@@ -30,7 +30,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Lifecycle
 
-    open override func willTransition(to newCollection: UITraitCollection,
+    public override func willTransition(to newCollection: UITraitCollection,
                                       with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { _ in
