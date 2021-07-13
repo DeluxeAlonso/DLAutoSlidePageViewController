@@ -28,6 +28,17 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         return UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
     }
 
+    // MARK: - Lifecycle
+
+    public override func willTransition(to newCollection: UITraitCollection,
+                                      with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { _ in
+            self.transitionInProgress = false
+            self.restartTimer()
+        }
+    }
+
     // MARK: - Initializers
 
     public convenience init(pages: [UIViewController],
