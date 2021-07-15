@@ -97,6 +97,7 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | currentPageIndicatorTintColor | UIColor | The tint color to be used for the current page indicator. |
 | pageIndicatorTintColor | UIColor | The tint color to be used for the page indicator. |
 | pageControlBackgroundColor | UIColor | The background color to be used for the page control. |
+| shouldAnimateTransition | Bool | Indicates whether the automatic transition is to be animated. |
 
 ## Author
 
