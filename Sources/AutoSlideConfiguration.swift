@@ -60,4 +60,6 @@ public extension AutoSlideConfiguration {
     var pageIndicatorTintColor: UIColor { UIColor.lightGray }
     var pageControlBackgroundColor: UIColor { UIColor.clear }
 
+    var shouldAnimateTransition: Bool { true }
+
 }
