@@ -19,6 +19,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private var timeInterval: TimeInterval = 0.0
     private var shouldHidePageControl: Bool = false
     private var navigationDirection: UIPageViewController.NavigationDirection = .forward
+    private var shouldAnimateTransition: Bool = false
 
     private var transitionInProgress: Bool = false
 
@@ -52,6 +53,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         self.timeInterval = configuration.timeInterval
         self.shouldHidePageControl = configuration.hidePageControl
         self.navigationDirection = configuration.navigationDirection
+        self.shouldAnimateTransition = configuration.shouldAnimateTransition
 
         setupPageView()
         setupPageTimer(with: timeInterval)
@@ -150,7 +152,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
         if !transitionInProgress {
             transitionInProgress = true
-            setViewControllers([viewController], direction: navigationDirection, animated: true, completion: { finished in
+            setViewControllers([viewController], direction: navigationDirection, animated: shouldAnimateTransition, completion: { finished in
                 self.transitionInProgress = false
             })
         }
