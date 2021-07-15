@@ -27,4 +27,6 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var pageIndicatorTintColor: UIColor = UIColor.lightGray
     public var pageControlBackgroundColor: UIColor = UIColor.clear
 
+    public var shouldAnimateTransition: Bool = true
+
 }
