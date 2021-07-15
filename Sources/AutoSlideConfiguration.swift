@@ -27,7 +27,7 @@ public protocol AutoSlideConfiguration {
     /// Locations for the spine. Only valid if the transition style is UIPageViewController.TransitionStyle.pageCurl.
     var spineLocation: UIPageViewController.SpineLocation { get }
 
-    /// Decides if page contron is going to be shown or not.
+    /// Decides if page control is going to be shown or not.
     var hidePageControl: Bool { get }
 
     /// The tint color to be used for the current page indicator.
