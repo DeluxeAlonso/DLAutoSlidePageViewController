@@ -39,6 +39,9 @@ public protocol AutoSlideConfiguration {
     /// The background color to be used for the page control.
     var pageControlBackgroundColor: UIColor { get }
 
+    /// A Boolean value that indicates whether the automatic transition is to be animated.
+    var shouldAnimateTransition: Bool { get }
+
 }
 
 // MARK: - Default values
