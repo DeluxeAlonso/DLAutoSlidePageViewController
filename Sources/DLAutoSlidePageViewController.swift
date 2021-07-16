@@ -11,17 +11,11 @@ import UIKit
 open class DLAutoSlidePageViewController: UIPageViewController {
 
     private var pages: [UIViewController] = []
-
-    private let configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
+    private var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
 
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
     private var timer: Timer?
-
-    private var timeInterval: TimeInterval = 0.0
-    private var shouldHidePageControl: Bool = false
-    private var navigationDirection: UIPageViewController.NavigationDirection = .forward
-    private var shouldAnimateTransition: Bool = false
 
     private var transitionInProgress: Bool = false
 
@@ -46,15 +40,14 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     public init(pages: [UIViewController], configuration: AutoSlideConfiguration) {
         self.pages = pages
+        self.configuration = configuration
         super.init(transitionStyle: configuration.transitionStyle,
                    navigationOrientation: configuration.navigationOrientation,
                    options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
                              UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
-        self.timeInterval = configuration.timeInterval
-        self.shouldHidePageControl = configuration.hidePageControl
 
         setupPageView()
-        setupPageTimer(with: timeInterval)
+        setupPageTimer(with: configuration.timeInterval)
         setupPageControl(with: configuration)
     }
 
@@ -66,24 +59,6 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-
-//    public convenience init(pages: [UIViewController],
-//                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
-//        self.init(transitionStyle: configuration.transitionStyle,
-//                  navigationOrientation: configuration.navigationOrientation,
-//                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
-//                            UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
-//        self.pages = pages
-//
-//        self.timeInterval = configuration.timeInterval
-//        self.shouldHidePageControl = configuration.hidePageControl
-//        self.navigationDirection = configuration.navigationDirection
-//        self.shouldAnimateTransition = configuration.shouldAnimateTransition
-//
-//        setupPageView()
-//        setupPageTimer(with: timeInterval)
-//        setupPageControl(with: configuration)
-//    }
 
     // MARK: - Lifecycle
     
@@ -111,6 +86,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private func setupPageView() {
         guard let firstPage = pages.first else { return }
         currentPageIndex = 0
+
+        let navigationDirection = configuration.navigationDirection
         setViewControllers([firstPage], direction: navigationDirection, animated: true, completion: nil)
     }
 
@@ -143,7 +120,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     private func restartTimer() {
         stopTimer()
-        setupPageTimer(with: timeInterval)
+        setupPageTimer(with: configuration.timeInterval)
     }
 
     // MARK: - Selectors
@@ -154,6 +131,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     @objc private func changePage() {
+        let navigationDirection = configuration.navigationDirection
+        let shouldAnimateTransition = configuration.shouldAnimateTransition
         currentPageIndex = AutoSlideHelper.pageIndex(for: currentPageIndex,
                                                      totalPageCount: pages.count,
                                                      direction: navigationDirection)
@@ -216,11 +195,11 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
     }
 
     public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return shouldHidePageControl ? 0 : pages.count
+        return configuration.hidePageControl ? 0 : pages.count
     }
 
     public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return shouldHidePageControl ? 0 : currentPageIndex
+        return configuration.hidePageControl ? 0 : currentPageIndex
     }
 
 }
