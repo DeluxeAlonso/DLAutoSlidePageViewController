@@ -44,23 +44,46 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Initializers
 
-    public convenience init(pages: [UIViewController],
-                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
-        self.init(transitionStyle: configuration.transitionStyle,
-                  navigationOrientation: configuration.navigationOrientation,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
-                            UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
+    public init(pages: [UIViewController], configuration: AutoSlideConfiguration) {
         self.pages = pages
-
+        super.init(transitionStyle: configuration.transitionStyle,
+                   navigationOrientation: configuration.navigationOrientation,
+                   options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
+                             UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
         self.timeInterval = configuration.timeInterval
         self.shouldHidePageControl = configuration.hidePageControl
-        self.navigationDirection = configuration.navigationDirection
-        self.shouldAnimateTransition = configuration.shouldAnimateTransition
 
         setupPageView()
         setupPageTimer(with: timeInterval)
         setupPageControl(with: configuration)
     }
+
+    public convenience init(pages: [UIViewController]) {
+        let configuration = DefaultAutoSlideConfiguration.shared
+        self.init(pages: pages, configuration: configuration)
+    }
+
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+
+//    public convenience init(pages: [UIViewController],
+//                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
+//        self.init(transitionStyle: configuration.transitionStyle,
+//                  navigationOrientation: configuration.navigationOrientation,
+//                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
+//                            UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
+//        self.pages = pages
+//
+//        self.timeInterval = configuration.timeInterval
+//        self.shouldHidePageControl = configuration.hidePageControl
+//        self.navigationDirection = configuration.navigationDirection
+//        self.shouldAnimateTransition = configuration.shouldAnimateTransition
+//
+//        setupPageView()
+//        setupPageTimer(with: timeInterval)
+//        setupPageControl(with: configuration)
+//    }
 
     // MARK: - Lifecycle
     
