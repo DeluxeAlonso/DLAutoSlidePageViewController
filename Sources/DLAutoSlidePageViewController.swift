@@ -47,8 +47,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
                              UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
 
         setupPageView()
+        setupPageControl()
         setupPageTimer(with: configuration.timeInterval)
-        setupPageControl(with: configuration)
     }
 
     public convenience init(pages: [UIViewController]) {
@@ -91,7 +91,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setViewControllers([firstPage], direction: navigationDirection, animated: true, completion: nil)
     }
 
-    private func setupPageControl(with configuration: AutoSlideConfiguration) {
+    private func setupPageControl() {
         pageControl?.currentPageIndicatorTintColor = configuration.currentPageIndicatorTintColor
         pageControl?.pageIndicatorTintColor = configuration.pageIndicatorTintColor
         pageControl?.backgroundColor = configuration.pageControlBackgroundColor
