@@ -12,6 +12,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     private var pages: [UIViewController] = []
 
+    private let configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
+
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
     private var timer: Timer?
