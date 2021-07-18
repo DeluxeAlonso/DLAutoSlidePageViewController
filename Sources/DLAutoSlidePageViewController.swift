@@ -38,6 +38,12 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Initializers
 
+    /**
+     * Initializes a newly created auto slide page view controller.
+     * - Parameters:
+     *      - pages: The view controllers to be set for the auto slide page view controller.
+     *      - configuration: The configuration of the auto slide page view controller.
+     */
     public init(pages: [UIViewController], configuration: AutoSlideConfiguration) {
         self.pages = pages
         self.configuration = configuration
@@ -51,6 +57,11 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setupPageTimer(with: configuration.timeInterval)
     }
 
+    /**
+     * Initializes a newly created auto slide page view controller with a default configuration.
+     * - Parameters:
+     *      - pages: The view controllers to be set for the auto slide page view controller.
+     */
     public convenience init(pages: [UIViewController]) {
         let configuration = DefaultAutoSlideConfiguration.shared
         self.init(pages: pages, configuration: configuration)
