@@ -10,8 +10,8 @@ import UIKit
 
 open class DLAutoSlidePageViewController: UIPageViewController {
 
-    private (set) var pages: [UIViewController] = []
-    private (set) var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
+    private (set) public var pages: [UIViewController] = []
+    private (set) public var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
 
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
