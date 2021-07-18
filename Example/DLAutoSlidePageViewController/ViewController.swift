@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         // Configure default auto slide page configuration
         DefaultAutoSlideConfiguration.shared.timeInterval = 2.0
         let pageViewController = DLAutoSlidePageViewController(pages: pages)
+
+//        let pageViewController = storyboard?.instantiateViewController(withIdentifier: "DLAutoSlidePageViewController") as! DLAutoSlidePageViewController
+//        pageViewController.setPages(pages)
         
         addChild(pageViewController)
         containerView.addSubview(pageViewController.view)

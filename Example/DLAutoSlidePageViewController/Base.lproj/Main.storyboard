@@ -40,12 +40,13 @@
         <!--Auto Slide Page View Controller-->
         <scene sceneID="exI-XT-uXA">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="hiS-be-goJ" customClass="DLAutoSlidePageViewController" customModule="DLAutoSlidePageViewController" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="DLAutoSlidePageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hiS-be-goJ" customClass="DLAutoSlidePageViewController" customModule="DLAutoSlidePageViewController" sceneMemberID="viewController">
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="timeInterval">
-                            <real key="value" value="2.8999999999999999"/>
+                            <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="hidePageControl" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="shouldAnimateTransition" value="YES"/>
                     </userDefinedRuntimeAttributes>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsB-PU-a47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

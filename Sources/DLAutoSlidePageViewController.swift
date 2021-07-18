@@ -12,37 +12,41 @@ import UIKit
 
     // MARK: - Interface Builder properties
 
-    @IBInspectable public var timeInterval: Double = 1.0 {
+    @IBInspectable public var timeInterval: Double = DefaultAutoSlideConfiguration.shared.timeInterval {
         didSet {
+            guard timeInterval >= 0 else {
+                DefaultAutoSlideConfiguration.shared.timeInterval = 0
+                return
+            }
             DefaultAutoSlideConfiguration.shared.timeInterval = timeInterval
         }
     }
 
-    @IBInspectable public var hidePageControl: Bool = false {
+    @IBInspectable public var hidePageControl: Bool = DefaultAutoSlideConfiguration.shared.hidePageControl {
         didSet {
             DefaultAutoSlideConfiguration.shared.hidePageControl = hidePageControl
         }
     }
 
-    @IBInspectable public var currentPageIndicatorTintColor: UIColor = .gray {
+    @IBInspectable public var currentPageIndicatorTintColor: UIColor = DefaultAutoSlideConfiguration.shared.currentPageIndicatorTintColor {
         didSet {
             DefaultAutoSlideConfiguration.shared.currentPageIndicatorTintColor = currentPageIndicatorTintColor
         }
     }
 
-    @IBInspectable public var pageIndicatorTintColor: UIColor = .gray {
+    @IBInspectable public var pageIndicatorTintColor: UIColor = DefaultAutoSlideConfiguration.shared.pageIndicatorTintColor {
         didSet {
             DefaultAutoSlideConfiguration.shared.pageIndicatorTintColor = pageIndicatorTintColor
         }
     }
 
-    @IBInspectable public var pageControlBackgroundColor: UIColor = .gray {
+    @IBInspectable public var pageControlBackgroundColor: UIColor = DefaultAutoSlideConfiguration.shared.pageControlBackgroundColor {
         didSet {
             DefaultAutoSlideConfiguration.shared.pageControlBackgroundColor = pageControlBackgroundColor
         }
     }
 
-    @IBInspectable public var shouldAnimateTransition: Bool = false {
+    @IBInspectable public var shouldAnimateTransition: Bool = DefaultAutoSlideConfiguration.shared.shouldAnimateTransition {
         didSet {
             DefaultAutoSlideConfiguration.shared.shouldAnimateTransition = shouldAnimateTransition
         }
@@ -98,6 +102,8 @@ import UIKit
 
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
+        DefaultAutoSlideConfiguration.shared.transitionStyle = self.transitionStyle
+        DefaultAutoSlideConfiguration.shared.navigationOrientation = self.navigationOrientation
         configuration = DefaultAutoSlideConfiguration.shared
     }
 
@@ -168,6 +174,9 @@ import UIKit
 
     public func setPages(_ pages: [UIViewController]) {
         self.pages = pages
+        setupPageView()
+        setupPageControl()
+        setupPageTimer(with: configuration.timeInterval)
     }
 
     // MARK: - Selectors
