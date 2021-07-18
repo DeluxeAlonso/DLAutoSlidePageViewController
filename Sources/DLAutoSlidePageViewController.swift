@@ -8,7 +8,47 @@
 
 import UIKit
 
-open class DLAutoSlidePageViewController: UIPageViewController {
+@IBDesignable open class DLAutoSlidePageViewController: UIPageViewController {
+
+    // MARK: - Interface Builder properties
+
+    @IBInspectable public var timeInterval: Double = 1.0 {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.timeInterval = timeInterval
+        }
+    }
+
+    @IBInspectable public var hidePageControl: Bool = false {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.hidePageControl = hidePageControl
+        }
+    }
+
+    @IBInspectable public var currentPageIndicatorTintColor: UIColor = .gray {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.currentPageIndicatorTintColor = currentPageIndicatorTintColor
+        }
+    }
+
+    @IBInspectable public var pageIndicatorTintColor: UIColor = .gray {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.pageIndicatorTintColor = pageIndicatorTintColor
+        }
+    }
+
+    @IBInspectable public var pageControlBackgroundColor: UIColor = .gray {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.pageControlBackgroundColor = pageControlBackgroundColor
+        }
+    }
+
+    @IBInspectable public var shouldAnimateTransition: Bool = false {
+        didSet {
+            DefaultAutoSlideConfiguration.shared.shouldAnimateTransition = shouldAnimateTransition
+        }
+    }
+
+    // MARK:  - Stored properties
 
     private var pages: [UIViewController] = []
     private var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
@@ -58,6 +98,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
+        configuration = DefaultAutoSlideConfiguration.shared
     }
 
     // MARK: - Lifecycle
@@ -121,6 +162,12 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private func restartTimer() {
         stopTimer()
         setupPageTimer(with: configuration.timeInterval)
+    }
+
+    // MARK: - Public
+
+    public func setPages(_ pages: [UIViewController]) {
+        self.pages = pages
     }
 
     // MARK: - Selectors
