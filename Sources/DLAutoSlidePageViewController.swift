@@ -162,7 +162,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
 extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
 
-    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    open func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard let viewController = pendingViewControllers.first,
               let index = pages.firstIndex(of: viewController) else {
             return
@@ -170,7 +170,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
         nextPageIndex = index
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    open func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             currentPageIndex = nextPageIndex
         }
@@ -183,7 +183,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
 
 extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         restartTimer()
         guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex > 0 {
@@ -194,7 +194,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
         }
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         restartTimer()
         guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex < pages.count - 1 {
@@ -205,11 +205,11 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
         }
     }
 
-    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
+    open func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return configuration.hidePageControl ? 0 : pages.count
     }
 
-    public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+    open func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return configuration.hidePageControl ? 0 : currentPageIndex
     }
 
