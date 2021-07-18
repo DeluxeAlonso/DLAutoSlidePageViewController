@@ -7,6 +7,9 @@
 
 import UIKit
 
+/**
+ * Configuration of the auto slide page view controller.
+ */
 public protocol AutoSlideConfiguration {
 
     /// Time interval to be used for each page automatic transition.
