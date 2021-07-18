@@ -8,7 +8,7 @@
 import UIKit
 
 /**
- * Behavior configuration of the auto slide page view controller.
+ * Configuration of the auto slide page view controller.
  */
 public protocol AutoSlideConfiguration {
 
