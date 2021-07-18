@@ -10,16 +10,12 @@ import UIKit
 
 open class DLAutoSlidePageViewController: UIPageViewController {
 
-    private var pages: [UIViewController] = []
+    private (set) public var pages: [UIViewController] = []
+    private (set) public var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
 
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
     private var timer: Timer?
-
-    private var timeInterval: TimeInterval = 0.0
-    private var shouldHidePageControl: Bool = false
-    private var navigationDirection: UIPageViewController.NavigationDirection = .forward
-    private var shouldAnimateTransition: Bool = false
 
     private var transitionInProgress: Bool = false
 
@@ -31,7 +27,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Lifecycle
 
-    public override func willTransition(to newCollection: UITraitCollection,
+    open override func willTransition(to newCollection: UITraitCollection,
                                       with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
         coordinator.animate(alongsideTransition: nil) { _ in
@@ -42,39 +38,37 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     // MARK: - Initializers
 
-    public convenience init(pages: [UIViewController],
-                            configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared) {
-        self.init(transitionStyle: configuration.transitionStyle,
-                  navigationOrientation: configuration.navigationOrientation,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
-                            UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
+    /**
+     * Initializes a newly created auto slide page view controller.
+     * - Parameters:
+     *      - pages: The view controllers to be set for the auto slide page view controller.
+     *      - configuration: The configuration of the auto slide page view controller.
+     */
+    public init(pages: [UIViewController], configuration: AutoSlideConfiguration) {
         self.pages = pages
-
-        self.timeInterval = configuration.timeInterval
-        self.shouldHidePageControl = configuration.hidePageControl
-        self.navigationDirection = configuration.navigationDirection
-        self.shouldAnimateTransition = configuration.shouldAnimateTransition
+        self.configuration = configuration
+        super.init(transitionStyle: configuration.transitionStyle,
+                   navigationOrientation: configuration.navigationOrientation,
+                   options: [UIPageViewController.OptionsKey.interPageSpacing: configuration.interPageSpacing,
+                             UIPageViewController.OptionsKey.spineLocation: configuration.spineLocation])
 
         setupPageView()
-        setupPageTimer(with: timeInterval)
-        setupPageControl(with: configuration)
+        setupPageControl()
+        setupPageTimer(with: configuration.timeInterval)
     }
 
-    @available(*, deprecated, message: "Use convenience initializer that receives an AutoSlideConfiguration instead.")
-    public convenience init(pages: [UIViewController],
-                            timeInterval ti: TimeInterval = 0.0,
-                            transitionStyle: UIPageViewController.TransitionStyle,
-                            interPageSpacing: Float = 0.0,
-                            hidePageControl: Bool = false) {
-        self.init(transitionStyle: transitionStyle,
-                  navigationOrientation: .horizontal,
-                  options: [UIPageViewController.OptionsKey.interPageSpacing: interPageSpacing])
-        self.pages = pages
-        self.timeInterval = ti
-        self.shouldHidePageControl = hidePageControl
-        setupPageView()
-        setupPageTimer(with: timeInterval)
-        setupPageControl(with: DefaultAutoSlideConfiguration.shared)
+    /**
+     * Initializes a newly created auto slide page view controller with a default configuration.
+     * - Parameters:
+     *      - pages: The view controllers to be set for the auto slide page view controller.
+     */
+    public convenience init(pages: [UIViewController]) {
+        let configuration = DefaultAutoSlideConfiguration.shared
+        self.init(pages: pages, configuration: configuration)
+    }
+
+    required public init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
     // MARK: - Lifecycle
@@ -103,10 +97,12 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private func setupPageView() {
         guard let firstPage = pages.first else { return }
         currentPageIndex = 0
+
+        let navigationDirection = configuration.navigationDirection
         setViewControllers([firstPage], direction: navigationDirection, animated: true, completion: nil)
     }
 
-    private func setupPageControl(with configuration: AutoSlideConfiguration) {
+    private func setupPageControl() {
         pageControl?.currentPageIndicatorTintColor = configuration.currentPageIndicatorTintColor
         pageControl?.pageIndicatorTintColor = configuration.pageIndicatorTintColor
         pageControl?.backgroundColor = configuration.pageControlBackgroundColor
@@ -135,7 +131,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     private func restartTimer() {
         stopTimer()
-        setupPageTimer(with: timeInterval)
+        setupPageTimer(with: configuration.timeInterval)
     }
 
     // MARK: - Selectors
@@ -146,6 +142,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     @objc private func changePage() {
+        let navigationDirection = configuration.navigationDirection
+        let shouldAnimateTransition = configuration.shouldAnimateTransition
         currentPageIndex = AutoSlideHelper.pageIndex(for: currentPageIndex,
                                                      totalPageCount: pages.count,
                                                      direction: navigationDirection)
@@ -164,7 +162,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
 extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
 
-    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+    open func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         guard let viewController = pendingViewControllers.first,
               let index = pages.firstIndex(of: viewController) else {
             return
@@ -172,7 +170,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
         nextPageIndex = index
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    open func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             currentPageIndex = nextPageIndex
         }
@@ -185,7 +183,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDelegate {
 
 extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         restartTimer()
         guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex > 0 {
@@ -196,7 +194,7 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
         }
     }
 
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    open func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         restartTimer()
         guard var currentIndex = pages.firstIndex(of: viewController) else { return nil }
         if currentIndex < pages.count - 1 {
@@ -207,12 +205,12 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
         }
     }
 
-    public func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return shouldHidePageControl ? 0 : pages.count
+    open func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return configuration.hidePageControl ? 0 : pages.count
     }
 
-    public func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return shouldHidePageControl ? 0 : currentPageIndex
+    open func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return configuration.hidePageControl ? 0 : currentPageIndex
     }
 
 }
