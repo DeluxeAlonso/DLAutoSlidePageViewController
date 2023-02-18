@@ -15,7 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-DLAutoSlidePageViewController requires iOS 12.0 and Swift 4.0 or above.
+DLAutoSlidePageViewController requires iOS 13.0 and Swift 5.0 or above.
 
 ## Installation
 
@@ -98,6 +98,9 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | pageIndicatorTintColor | UIColor | The tint color to be used for the page indicator. |
 | pageControlBackgroundColor | UIColor | The background color to be used for the page control. |
 | shouldAnimateTransition | Bool | Indicates whether the automatic transition is to be animated. |
+| pageControlDirection | UIPageControl.Direction | Decribes the layout direction of a page control’s indicators. Available since iOS 16. |
+| pageControlPreferredIndicatorImage | UIImage | The preferred image for indicators. Symbol images are recommended. Default is nil. Available since iOS 14. |
+| pageControlPreferredCurrentPageIndicatorImage | UIImage | The preferred image for the current page indicator. Available since iOS 16. |
 
 ## Author
 

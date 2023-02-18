@@ -42,6 +42,18 @@ public protocol AutoSlideConfiguration {
     /// The background color to be used for the page control.
     var pageControlBackgroundColor: UIColor { get }
 
+    @available(iOS 16.0, *)
+    /// Decribes the layout direction of a page control’s indicators.
+    var pageControlDirection: UIPageControl.Direction { get }
+
+    @available(iOS 14.0, *)
+    /// The preferred image for indicators. Symbol images are recommended. Default is nil.
+    var pageControlPreferredIndicatorImage: UIImage? { get }
+
+    @available(iOS 16.0, *)
+    /// The preferred image for the current page indicator.
+    var pageControlPreferredCurrentPageIndicatorImage: UIImage? { get }
+
     /// Indicates whether the automatic transition is to be animated.
     var shouldAnimateTransition: Bool { get }
 
@@ -62,6 +74,12 @@ public extension AutoSlideConfiguration {
     var currentPageIndicatorTintColor: UIColor { UIColor.gray }
     var pageIndicatorTintColor: UIColor { UIColor.lightGray }
     var pageControlBackgroundColor: UIColor { UIColor.clear }
+
+    @available(iOS 16.0, *)
+    var pageControlDirection: UIPageControl.Direction { .natural }
+    var pageControlPreferredIndicatorImage: UIImage? { nil }
+    @available(iOS 16.0, *)
+    var pageControlPreferredCurrentPageIndicatorImage: UIImage? { nil }
 
     var shouldAnimateTransition: Bool { true }
 
