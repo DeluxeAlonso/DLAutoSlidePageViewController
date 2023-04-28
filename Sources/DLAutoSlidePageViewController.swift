@@ -98,15 +98,12 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
     }
 
     @objc func tapGestureHandler(_ sender: UITapGestureRecognizer) {
-        print("tap")
         let point = sender.location(in: self.view)
-            let x = point.x
-            let y = point.y
         let tappableArea = view.frame.width * 0.20
         if point.x <= tappableArea { // Tap on left side
-            changePage()
+            movePage(with: .reverse, animated: true)
         } else if point.x >= view.frame.width - tappableArea { // Tap on right side
-            changePage()
+            movePage(with: .forward, animated: true)
         }
     }
 
@@ -166,6 +163,19 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
         setupPageTimer(with: configuration.timeInterval)
     }
 
+    private func movePage(with navigationDirection: NavigationDirection, animated: Bool) {
+        currentPageIndex = AutoSlideHelper.pageIndex(for: currentPageIndex,
+                                                     totalPageCount: pages.count,
+                                                     direction: navigationDirection)
+        guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
+        if !transitionInProgress {
+            transitionInProgress = true
+            setViewControllers([viewController], direction: navigationDirection, animated: animated, completion: { finished in
+                self.transitionInProgress = false
+            })
+        }
+    }
+
     // MARK: - Selectors
 
     @objc private func movedToForeground() {
@@ -176,16 +186,7 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
     @objc private func changePage() {
         let navigationDirection = configuration.navigationDirection
         let shouldAnimateTransition = configuration.shouldAnimateTransition
-        currentPageIndex = AutoSlideHelper.pageIndex(for: currentPageIndex,
-                                                     totalPageCount: pages.count,
-                                                     direction: navigationDirection)
-        guard let viewController = viewControllerAtIndex(currentPageIndex) as UIViewController? else { return }
-        if !transitionInProgress {
-            transitionInProgress = true
-            setViewControllers([viewController], direction: navigationDirection, animated: shouldAnimateTransition, completion: { finished in
-                self.transitionInProgress = false
-            })
-        }
+        movePage(with: navigationDirection, animated: shouldAnimateTransition)
     }
 
 }
