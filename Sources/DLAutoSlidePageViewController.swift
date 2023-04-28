@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecognizerDelegate {
+open class DLAutoSlidePageViewController: UIPageViewController {
 
     private (set) public var pages: [UIViewController] = []
     private (set) public var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
@@ -17,7 +17,11 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
     private var nextPageIndex: Int = 0
     private var timer: Timer?
 
-    private var transitionInProgress: Bool = false
+    private var transitionInProgress: Bool = false {
+        didSet {
+            view.isUserInteractionEnabled = !transitionInProgress
+        }
+    }
 
     // MARK: - Computed properties
 
@@ -87,24 +91,14 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
         setupObservers()
 
         if configuration.shouldSlideOnTap {
-            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
-            gestureRecognizer.delegate = self
-            view.addGestureRecognizer(gestureRecognizer)
+            setupTapGesture()
         }
     }
 
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-
-    @objc func tapGestureHandler(_ sender: UITapGestureRecognizer) {
-        let point = sender.location(in: self.view)
-        let tappableArea = view.frame.width * (CGFloat(configuration.tappableAreaPercentage) / 100)
-        if point.x <= tappableArea { // Tap on left side
-            movePage(with: .reverse, animated: true)
-        } else if point.x >= view.frame.width - tappableArea { // Tap on right side
-            movePage(with: .forward, animated: true)
-        }
+    private func setupTapGesture() {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
+        gestureRecognizer.delegate = self
+        view.addGestureRecognizer(gestureRecognizer)
     }
 
     // MARK: - Private
@@ -178,6 +172,16 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
 
     // MARK: - Selectors
 
+    @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
+        let point = sender.location(in: self.view)
+        let tappableArea = view.frame.width * (CGFloat(configuration.tappableAreaPercentage) / 100)
+        if point.x <= tappableArea { // Tap on left side
+            movePage(with: .reverse, animated: true)
+        } else if point.x >= view.frame.width - tappableArea { // Tap on right side
+            movePage(with: .forward, animated: true)
+        }
+    }
+
     @objc private func movedToForeground() {
         transitionInProgress = false
         restartTimer()
@@ -244,6 +248,16 @@ extension DLAutoSlidePageViewController: UIPageViewControllerDataSource {
 
     open func presentationIndex(for pageViewController: UIPageViewController) -> Int {
         return configuration.hidePageControl ? 0 : currentPageIndex
+    }
+
+}
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension DLAutoSlidePageViewController: UIGestureRecognizerDelegate {
+
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 
 }
