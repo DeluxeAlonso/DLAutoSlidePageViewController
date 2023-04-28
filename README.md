@@ -33,7 +33,7 @@ pod "DLAutoSlidePageViewController"
 To integrate using [Swift Package Manager](https://swift.org/package-manager/), add the following as a dependency to your Package.swift:
 
 ```Swift
-.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "1.2.0"))
+.package(url: "https://github.com/DeluxeAlonso/DLAutoSlidePageViewController.git", .upToNextMajor(from: "3.0.0"))
 ```
 
 ## Usage
@@ -101,6 +101,8 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | pageControlDirection | UIPageControl.Direction | Decribes the layout direction of a page control’s indicators. Available since iOS 16. |
 | pageControlPreferredIndicatorImage | UIImage | The preferred image for indicators. Symbol images are recommended. Default is nil. Available since iOS 14. |
 | pageControlPreferredCurrentPageIndicatorImage | UIImage | The preferred image for the current page indicator. Available since iOS 16. |
+| shouldSlideOnTap | Bool | Indicates if the page controller should slide back/forward when the users taps on the left/right side. |
+| tappableAreaPercentage | Float | Tappable area percentage used to detect taps on both sides: left and right. Defaults to 20%. Only used if shouldSlideOnTap is set to true. |
 
 ## Author
 
