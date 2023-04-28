@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class DLAutoSlidePageViewController: UIPageViewController {
+open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecognizerDelegate {
 
     private (set) public var pages: [UIViewController] = []
     private (set) public var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
@@ -55,6 +55,22 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setupPageView()
         setupPageControl()
         setupPageTimer(with: configuration.timeInterval)
+
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handler))
+        gestureRecognizer.delegate = self
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+    @objc func handler(_ sender: UITapGestureRecognizer) {
+        print("tap")
+        let point = sender.location(in: self.view)
+            let x = point.x
+            let y = point.y
+        print(point)
     }
 
     /**
