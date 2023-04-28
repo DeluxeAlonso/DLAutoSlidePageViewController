@@ -28,5 +28,8 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var pageControlBackgroundColor: UIColor = UIColor.clear
 
     public var shouldAnimateTransition: Bool = true
+    
+    public var shouldSlideOnTap: Bool = false
+    public var tappableAreaPercentage: Float = 20
 
 }
