@@ -99,7 +99,7 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
 
     @objc func tapGestureHandler(_ sender: UITapGestureRecognizer) {
         let point = sender.location(in: self.view)
-        let tappableArea = view.frame.width * 0.20
+        let tappableArea = view.frame.width * (CGFloat(configuration.tappableAreaPercentage) / 100)
         if point.x <= tappableArea { // Tap on left side
             movePage(with: .reverse, animated: true)
         } else if point.x >= view.frame.width - tappableArea { // Tap on right side

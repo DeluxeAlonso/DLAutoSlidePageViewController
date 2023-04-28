@@ -60,6 +60,9 @@ public protocol AutoSlideConfiguration {
     /// Indicates if the page controller should slide back/forward when the users taps on the left/right side.
     var shouldSlideOnTap: Bool { get }
 
+    /// Tappable area percentage used to detect taps on both sides: left and right. Defaults to 20%. Only used if shouldSlideOnTap is set to true.
+    var tappableAreaPercentage: Float { get }
+
 }
 
 // MARK: - Default values
@@ -85,6 +88,8 @@ public extension AutoSlideConfiguration {
     var pageControlPreferredCurrentPageIndicatorImage: UIImage? { nil }
 
     var shouldAnimateTransition: Bool { true }
+
     var shouldSlideOnTap: Bool { true }
+    var tappableAreaPercentage: Float { 20 }
 
 }
