@@ -55,22 +55,6 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
         setupPageView()
         setupPageControl()
         setupPageTimer(with: configuration.timeInterval)
-
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handler))
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
-    }
-
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-
-    @objc func handler(_ sender: UITapGestureRecognizer) {
-        print("tap")
-        let point = sender.location(in: self.view)
-            let x = point.x
-            let y = point.y
-        print(point)
     }
 
     /**
@@ -101,6 +85,29 @@ open class DLAutoSlidePageViewController: UIPageViewController, UIGestureRecogni
         delegate = self
         dataSource = self
         setupObservers()
+
+        if configuration.shouldSlideOnTap {
+            let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
+            gestureRecognizer.delegate = self
+            view.addGestureRecognizer(gestureRecognizer)
+        }
+    }
+
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+    @objc func tapGestureHandler(_ sender: UITapGestureRecognizer) {
+        print("tap")
+        let point = sender.location(in: self.view)
+            let x = point.x
+            let y = point.y
+        let tappableArea = view.frame.width * 0.20
+        if point.x <= tappableArea { // Tap on left side
+            changePage()
+        } else if point.x >= view.frame.width - tappableArea { // Tap on right side
+            changePage()
+        }
     }
 
     // MARK: - Private

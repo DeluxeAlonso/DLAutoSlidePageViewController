@@ -33,6 +33,7 @@ class ViewController: UIViewController {
 
         // Configure default auto slide page configuration
         DefaultAutoSlideConfiguration.shared.timeInterval = 2.0
+        DefaultAutoSlideConfiguration.shared.shouldSlideOnTap = true
         let pageViewController = DLAutoSlidePageViewController(pages: pages)
         
         addChild(pageViewController)
