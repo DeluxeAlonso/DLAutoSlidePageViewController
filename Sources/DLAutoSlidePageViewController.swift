@@ -8,6 +8,13 @@
 
 import UIKit
 
+public protocol DLAutoSlidePageViewControllerGestureDelegate: AnyObject {
+
+    func autoSlidePageViewController(_ autoSlidePageViewController: DLAutoSlidePageViewController,
+                                     didTapPageViewControllerAtPoint point: CGPoint)
+
+}
+
 open class DLAutoSlidePageViewController: UIPageViewController {
 
     private (set) public var pages: [UIViewController] = []
@@ -16,6 +23,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private var currentPageIndex: Int = 0
     private var nextPageIndex: Int = 0
     private var timer: Timer?
+
+    public weak var gestureDelegate: DLAutoSlidePageViewControllerGestureDelegate?
 
     private var transitionInProgress: Bool = false {
         didSet {
@@ -90,7 +99,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         dataSource = self
         setupObservers()
 
-        if configuration.shouldSlideOnTap {
+        if configuration.overridesGestureBehavior || configuration.shouldSlideOnTap {
             setupTapGesture()
         }
     }
@@ -174,6 +183,12 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
         let point = sender.location(in: self.view)
+
+        if configuration.overridesGestureBehavior {
+            gestureDelegate?.autoSlidePageViewController(self, didTapPageViewControllerAtPoint: point)
+            return
+        }
+
         let tappableArea = view.frame.width * (CGFloat(configuration.tappableAreaPercentage) / 100)
         if point.x <= tappableArea { // Tap on left side
             movePage(with: .reverse, animated: true)

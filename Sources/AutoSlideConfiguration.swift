@@ -63,6 +63,9 @@ public protocol AutoSlideConfiguration {
     /// Tappable area percentage used to detect taps on both sides: left and right. Defaults to 20%. Only used if shouldSlideOnTap is set to true.
     var tappableAreaPercentage: Float { get }
 
+    /// False by default. If set to true DLAutoSlidePageViewControllerGestureDelegate methods will be called if needed and shouldSlideOnTap property will be ignored.
+    var overridesGestureBehavior: Bool { get }
+
 }
 
 // MARK: - Default values
@@ -91,5 +94,7 @@ public extension AutoSlideConfiguration {
 
     var shouldSlideOnTap: Bool { true }
     var tappableAreaPercentage: Float { 20 }
+
+    var overridesGestureBehavior: Bool { false }
 
 }
