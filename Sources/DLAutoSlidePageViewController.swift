@@ -8,6 +8,12 @@
 
 import UIKit
 
+public protocol DLAutoSlidePageViewControllerGestureDelegate {
+
+    func autoSlidePageViewController(_ autoSlidePageViewController: DLAutoSlidePageViewController, didTapPageViewController tapped: Bool)
+
+}
+
 open class DLAutoSlidePageViewController: UIPageViewController {
 
     private (set) public var pages: [UIViewController] = []
