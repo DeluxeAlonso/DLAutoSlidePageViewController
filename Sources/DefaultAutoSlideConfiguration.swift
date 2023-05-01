@@ -32,6 +32,6 @@ final public class DefaultAutoSlideConfiguration: AutoSlideConfiguration {
     public var shouldSlideOnTap: Bool = false
     public var tappableAreaPercentage: Float = 20
 
-    public var overridesGesturesBehavior: Bool = false
+    public var overridesGestureBehavior: Bool = false
 
 }

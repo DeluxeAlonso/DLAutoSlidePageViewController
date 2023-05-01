@@ -64,7 +64,7 @@ public protocol AutoSlideConfiguration {
     var tappableAreaPercentage: Float { get }
 
     /// False by default. If set to true DLAutoSlidePageViewControllerGestureDelegate methods will be called if needed and shouldSlideOnTap property will be ignored.
-    var overridesGesturesBehavior: Bool { get }
+    var overridesGestureBehavior: Bool { get }
 
 }
 
@@ -95,6 +95,6 @@ public extension AutoSlideConfiguration {
     var shouldSlideOnTap: Bool { true }
     var tappableAreaPercentage: Float { 20 }
 
-    var overridesGesturesBehavior: Bool { false }
+    var overridesGestureBehavior: Bool { false }
 
 }
