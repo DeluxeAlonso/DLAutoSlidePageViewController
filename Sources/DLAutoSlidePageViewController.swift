@@ -28,6 +28,9 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private var nextPageIndex: Int = 0
     private var timer: Timer?
 
+    private var tapGestureRecognizer: UITapGestureRecognizer?
+    private var longPressGestureRecognizer: UILongPressGestureRecognizer?
+
     public weak var gestureDelegate: DLAutoSlidePageViewControllerGestureDelegate?
 
     private var transitionInProgress: Bool = false {
@@ -101,22 +104,9 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         super.viewDidLoad()
         delegate = self
         dataSource = self
+
         setupObservers()
-
-        if configuration.overridesGestureBehavior || configuration.shouldSlideOnTap {
-            setupGestures()
-        }
-    }
-
-    private func setupGestures() {
-        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureHandler))
-        longPressGestureRecognizer.delegate = self
-        view.addGestureRecognizer(longPressGestureRecognizer)
-
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
-        tapGestureRecognizer.delegate = self
-        tapGestureRecognizer.require(toFail: longPressGestureRecognizer)
-        view.addGestureRecognizer(tapGestureRecognizer)
+        setupGestures()
     }
 
     // MARK: - Private
@@ -124,6 +114,25 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private func setupObservers() {
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(movedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
+    private func setupGestures() {
+        if configuration.overridesGestureBehavior {
+            let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureHandler))
+            longPressGestureRecognizer.delegate = self
+            view.addGestureRecognizer(longPressGestureRecognizer)
+            self.longPressGestureRecognizer = longPressGestureRecognizer
+        }
+
+        if configuration.overridesGestureBehavior || configuration.shouldSlideOnTap {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
+            tapGestureRecognizer.delegate = self
+            if let longPressGestureRecognizer {
+                tapGestureRecognizer.require(toFail: longPressGestureRecognizer)
+            }
+            view.addGestureRecognizer(tapGestureRecognizer)
+            self.tapGestureRecognizer = tapGestureRecognizer
+        }
     }
 
     private func setupPageView() {
