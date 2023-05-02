@@ -13,6 +13,10 @@ public protocol DLAutoSlidePageViewControllerGestureDelegate: AnyObject {
     func autoSlidePageViewController(_ autoSlidePageViewController: DLAutoSlidePageViewController,
                                      didTapPageViewControllerAtPoint point: CGPoint)
 
+    func autoSlidePageViewController(_ autoSlidePageViewController: DLAutoSlidePageViewController,
+                                     didLongPressPageViewControllerAtPoint point: CGPoint,
+                                     withState state: UIGestureRecognizer.State)
+
 }
 
 open class DLAutoSlidePageViewController: UIPageViewController {
@@ -187,7 +191,6 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     // MARK: - Selectors
 
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
-        print("TAP")
         let point = sender.location(in: self.view)
 
         if configuration.overridesGestureBehavior {
@@ -204,7 +207,8 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     }
 
     @objc private func longPressGestureHandler(_ sender: UILongPressGestureRecognizer) {
-        print("LONG")
+        let point = sender.location(in: self.view)
+        gestureDelegate?.autoSlidePageViewController(self, didLongPressPageViewControllerAtPoint: point, withState: sender.state)
     }
 
     @objc private func movedToForeground() {
