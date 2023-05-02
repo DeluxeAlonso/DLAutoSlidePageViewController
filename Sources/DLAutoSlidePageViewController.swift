@@ -100,14 +100,19 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         setupObservers()
 
         if configuration.overridesGestureBehavior || configuration.shouldSlideOnTap {
-            setupTapGesture()
+            setupGestures()
         }
     }
 
-    private func setupTapGesture() {
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
-        gestureRecognizer.delegate = self
-        view.addGestureRecognizer(gestureRecognizer)
+    private func setupGestures() {
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureHandler))
+        longPressGestureRecognizer.delegate = self
+        view.addGestureRecognizer(longPressGestureRecognizer)
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGestureHandler))
+        tapGestureRecognizer.delegate = self
+        tapGestureRecognizer.require(toFail: longPressGestureRecognizer)
+        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     // MARK: - Private
@@ -182,6 +187,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     // MARK: - Selectors
 
     @objc private func tapGestureHandler(_ sender: UITapGestureRecognizer) {
+        print("TAP")
         let point = sender.location(in: self.view)
 
         if configuration.overridesGestureBehavior {
@@ -195,6 +201,10 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         } else if point.x >= view.frame.width - tappableArea { // Tap on right side
             movePage(with: .forward, animated: true)
         }
+    }
+
+    @objc private func longPressGestureHandler(_ sender: UILongPressGestureRecognizer) {
+        print("LONG")
     }
 
     @objc private func movedToForeground() {
