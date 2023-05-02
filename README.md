@@ -103,6 +103,8 @@ let pageViewController = DLAutoSlidePageViewController(pages: pages, configurati
 | pageControlPreferredCurrentPageIndicatorImage | UIImage | The preferred image for the current page indicator. Available since iOS 16. |
 | shouldSlideOnTap | Bool | Indicates if the page controller should slide back/forward when the users taps on the left/right side. |
 | tappableAreaPercentage | Float | Tappable area percentage used to detect taps on both sides: left and right. Defaults to 20%. Only used if shouldSlideOnTap is set to true. |
+| overridesGestureBehavior | Bool | False by default. If set to true DLAutoSlidePageViewControllerGestureDelegate methods will be called if needed and shouldSlideOnTap property will be ignored. |
+
 
 ## Author
 
