@@ -8,4 +8,9 @@ target 'DLAutoSlidePageViewController Example' do
   # Pods for DLAutoSlidePageViewController
   pod 'DLAutoSlidePageViewController', :path => '../'
 
+  target 'DLAutoSlidePageViewControllerTests' do
+          inherit! :search_paths
+          pod 'DLAutoSlidePageViewController', :path => '../'
+  end
+
 end
