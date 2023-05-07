@@ -15,7 +15,7 @@
 		E223005D20BB05F800FC7EBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A03021F9487B9002683FC /* LaunchScreen.storyboard */; };
 		E223005E20BB05F800FC7EBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25A03001F9487B9002683FC /* Assets.xcassets */; };
 		E223005F20BB05F800FC7EBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25A02FD1F9487B9002683FC /* Main.storyboard */; };
-		E2A2E9002A038F4800ADBEB6 /* AutoSlideHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A2E8FF2A038F4800ADBEB6 /* AutoSlideHelperTests.swift */; };
+		E25B79632A078ABB0065DA0F /* AutoSlideHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25B79622A078ABB0065DA0F /* AutoSlideHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +40,8 @@
 		E25A03001F9487B9002683FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E25A03031F9487B9002683FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E25A03051F9487B9002683FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25B79622A078ABB0065DA0F /* AutoSlideHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSlideHelperTests.swift; sourceTree = "<group>"; };
 		E2A2E8F62A038F2900ADBEB6 /* DLAutoSlidePageViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DLAutoSlidePageViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2A2E8FF2A038F4800ADBEB6 /* AutoSlideHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoSlideHelperTests.swift; path = ../../Tests/AutoSlideHelperTests.swift; sourceTree = "<group>"; };
 		E2FDE50C1F948DD000EA7FC7 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		F22CEC3DD88F081CC8F08A7A /* Pods-DLAutoSlidePageViewControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLAutoSlidePageViewControllerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DLAutoSlidePageViewControllerTests/Pods-DLAutoSlidePageViewControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF8CAACEACD6206F33154DB5 /* Pods-DLAutoSlidePageViewController Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DLAutoSlidePageViewController Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DLAutoSlidePageViewController Example/Pods-DLAutoSlidePageViewController Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,8 +90,8 @@
 		E25A02ED1F9487B9002683FC = {
 			isa = PBXGroup;
 			children = (
+				E25B79612A078ABB0065DA0F /* Tests */,
 				E25A02F81F9487B9002683FC /* DLAutoSlidePageViewController */,
-				E2A2E8F72A038F2900ADBEB6 /* DLAutoSlidePageViewControllerTests */,
 				E25A02F71F9487B9002683FC /* Products */,
 				DCCC763DA1DAB665462461DF /* Pods */,
 				86B69C9C2E30178CF1D9561F /* Frameworks */,
@@ -121,12 +121,13 @@
 			path = DLAutoSlidePageViewController;
 			sourceTree = "<group>";
 		};
-		E2A2E8F72A038F2900ADBEB6 /* DLAutoSlidePageViewControllerTests */ = {
+		E25B79612A078ABB0065DA0F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				E2A2E8FF2A038F4800ADBEB6 /* AutoSlideHelperTests.swift */,
+				E25B79622A078ABB0065DA0F /* AutoSlideHelperTests.swift */,
 			);
-			path = DLAutoSlidePageViewControllerTests;
+			name = Tests;
+			path = ../Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,7 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A2E9002A038F4800ADBEB6 /* AutoSlideHelperTests.swift in Sources */,
+				E25B79632A078ABB0065DA0F /* AutoSlideHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
