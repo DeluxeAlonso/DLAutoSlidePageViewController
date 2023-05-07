@@ -22,4 +22,16 @@ final class AutoSlideHelperTests: XCTestCase {
         XCTAssertEqual(newPageIndex, 2)
     }
 
+    func testReverseDirection() {
+        // Arrange
+        let currentIndex = 1
+        let totalPageCount = 5
+        // Act
+        let newPageIndex = AutoSlideHelper.pageIndex(for: currentIndex,
+                                                     totalPageCount: totalPageCount,
+                                                     direction: .reverse)
+        // Assert
+        XCTAssertEqual(newPageIndex, 0)
+    }
+
 }
