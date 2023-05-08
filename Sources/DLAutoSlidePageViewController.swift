@@ -160,7 +160,6 @@ open class DLAutoSlidePageViewController: UIPageViewController {
 
     private func viewControllerAtIndex(_ index: Int) -> UIViewController {
         guard index < pages.count else { return UIViewController() }
-        currentPageIndex = index
         return pages[index]
     }
 
