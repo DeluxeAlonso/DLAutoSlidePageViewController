@@ -12,8 +12,8 @@ final class AutoSlideHelperTests: XCTestCase {
 
     func testForwardDirection() {
         // Arrange
-        let currentIndex = 1
         let totalPageCount = 5
+        let currentIndex = 1
         // Act
         let newPageIndex = AutoSlideHelper.pageIndex(for: currentIndex,
                                                      totalPageCount: totalPageCount,
@@ -22,16 +22,40 @@ final class AutoSlideHelperTests: XCTestCase {
         XCTAssertEqual(newPageIndex, 2)
     }
 
+    func testForwardDirectionWithMaxCurrentIndex() {
+        // Arrange
+        let totalPageCount = 5
+        let currentIndex = totalPageCount - 1
+        // Act
+        let newPageIndex = AutoSlideHelper.pageIndex(for: currentIndex,
+                                                     totalPageCount: totalPageCount,
+                                                     direction: .forward)
+        // Assert
+        XCTAssertEqual(newPageIndex, 0)
+    }
+
     func testReverseDirection() {
         // Arrange
-        let currentIndex = 1
         let totalPageCount = 5
+        let currentIndex = 1
         // Act
         let newPageIndex = AutoSlideHelper.pageIndex(for: currentIndex,
                                                      totalPageCount: totalPageCount,
                                                      direction: .reverse)
         // Assert
         XCTAssertEqual(newPageIndex, 0)
+    }
+
+    func testReverseDirectionWithZeroCurrentIndex() {
+        // Arrange
+        let totalPageCount = 5
+        let currentIndex = 0
+        // Act
+        let newPageIndex = AutoSlideHelper.pageIndex(for: currentIndex,
+                                                     totalPageCount: totalPageCount,
+                                                     direction: .reverse)
+        // Assert
+        XCTAssertEqual(newPageIndex, totalPageCount - 1)
     }
 
 }
