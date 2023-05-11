@@ -86,6 +86,7 @@ public extension AutoSlideConfiguration {
 
     @available(iOS 16.0, *)
     var pageControlDirection: UIPageControl.Direction { .natural }
+    @available(iOS 14.0, *)
     var pageControlPreferredIndicatorImage: UIImage? { nil }
     @available(iOS 16.0, *)
     var pageControlPreferredCurrentPageIndicatorImage: UIImage? { nil }
