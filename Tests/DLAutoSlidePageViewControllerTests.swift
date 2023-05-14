@@ -42,4 +42,16 @@ final class DLAutoSlidePageViewControllerTests: XCTestCase {
         XCTAssertEqual(presentationCount, 0)
     }
 
+    func testPresentationIndexZeroWhenHidesPageControl() {
+        // Arrange
+        var testConfiguration = TestConfiguration()
+        testConfiguration.testHidesPageControl = true
+        let pages = [UIViewController(), UIViewController(), UIViewController()]
+        let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: testConfiguration)
+        // Act
+        let presentationIndex = pageViewController.presentationIndex(for: pageViewController)
+        // Assert
+        XCTAssertEqual(presentationIndex, 0)
+    }
+
 }
