@@ -17,6 +17,5 @@ jobs:
       working-directory: ./Example
       run: pod install
     - name: Run unit tests
+      working-directory: ./Example
       run: bundle exec fastlane tests
-    - name: Upload coverage
-      uses: codecov/codecov-action@v3
