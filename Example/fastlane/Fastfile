@@ -8,7 +8,7 @@ platform :ios do
   	run_tests(
   	  workspace: "DLAutoSlidePageViewController.xcworkspace",
      	  devices: ["iPhone 14"],
-      	  scheme: "DLAutoSlidePageViewController Tests",
+      	  scheme: "DLAutoSlidePageViewController Example",
 	  code_coverage: true
     	)
 	end
