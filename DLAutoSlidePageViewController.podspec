@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'DLAutoSlidePageViewController'
-  s.version          = '3.1.0'
+  s.version          = '3.2.0'
   s.summary          = 'An auto slide PageViewController.'
  
   s.description      = <<-DESC
