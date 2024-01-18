@@ -24,7 +24,14 @@ open class DLAutoSlidePageViewController: UIPageViewController {
     private (set) public var pages: [UIViewController] = []
     private (set) public var configuration: AutoSlideConfiguration = DefaultAutoSlideConfiguration.shared
 
-    private var currentPageIndex: Int = 0
+    private var currentPageIndex: Int = 0 {
+        didSet {
+            currentPageIndexDidChange?(oldValue, currentPageIndex)
+        }
+    }
+    /// Closure that takes as parameter the previous current page index and the new current page index.
+    public var currentPageIndexDidChange: ((Int, Int) -> Void)?
+
     private var nextPageIndex: Int = 0
     private var timer: Timer?
 
