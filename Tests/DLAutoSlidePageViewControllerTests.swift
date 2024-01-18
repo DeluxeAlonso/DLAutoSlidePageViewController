@@ -14,6 +14,11 @@ struct TestConfiguration: AutoSlideConfiguration {
     var hidePageControl: Bool {
         testHidesPageControl
     }
+
+    var testTimeInterval: TimeInterval = 1.0
+    var timeInterval: TimeInterval {
+        testTimeInterval
+    }
 }
 
 final class DLAutoSlidePageViewControllerTests: XCTestCase {
@@ -52,6 +57,27 @@ final class DLAutoSlidePageViewControllerTests: XCTestCase {
         let presentationIndex = pageViewController.presentationIndex(for: pageViewController)
         // Assert
         XCTAssertEqual(presentationIndex, 0)
+    }
+
+    func testCurrentPageIndexDidChange() {
+        // Arrange
+        var testConfiguration = TestConfiguration()
+        testConfiguration.testTimeInterval = 0.0
+        let firstViewController = UIViewController()
+        let secondViewController = UIViewController()
+        let pages = [firstViewController, secondViewController]
+        let pageViewController = DLAutoSlidePageViewController(pages: pages, configuration: testConfiguration)
+        let expectation = XCTestExpectation(description: "currentPageIndexDidChange closure should be called.")
+        // Act
+        pageViewController.currentPageIndexDidChange = { previousIndex, newIndex in
+            XCTAssertEqual(previousIndex, 0)
+            XCTAssertEqual(newIndex, 1)
+            expectation.fulfill()
+        }
+        pageViewController.pageViewController(pageViewController, willTransitionTo: [secondViewController])
+        pageViewController.pageViewController(pageViewController, didFinishAnimating: true, previousViewControllers: [], transitionCompleted: true)
+        // Assert
+        wait(for: [expectation], timeout: 1)
     }
 
 }
