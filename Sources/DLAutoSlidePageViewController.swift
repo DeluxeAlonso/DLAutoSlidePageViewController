@@ -157,9 +157,7 @@ open class DLAutoSlidePageViewController: UIPageViewController {
         if #available(iOS 16.0, *) {
             pageControl?.direction = configuration.pageControlDirection
         }
-        if #available(iOS 14.0, *) {
-            pageControl?.preferredIndicatorImage = configuration.pageControlPreferredIndicatorImage
-        }
+        pageControl?.preferredIndicatorImage = configuration.pageControlPreferredIndicatorImage
         if #available(iOS 16.0, *) {
             pageControl?.preferredCurrentPageIndicatorImage = configuration.pageControlPreferredCurrentPageIndicatorImage
         }

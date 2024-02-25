@@ -15,7 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-DLAutoSlidePageViewController requires iOS 13.0 and Swift 5.0 or above.
+DLAutoSlidePageViewController requires iOS 14.0 and Swift 5.0 or above.
 
 ## Installation
 
