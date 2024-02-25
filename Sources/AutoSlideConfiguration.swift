@@ -46,7 +46,6 @@ public protocol AutoSlideConfiguration {
     /// Decribes the layout direction of a page control’s indicators.
     var pageControlDirection: UIPageControl.Direction { get }
 
-    @available(iOS 14.0, *)
     /// The preferred image for indicators. Symbol images are recommended. Default is nil.
     var pageControlPreferredIndicatorImage: UIImage? { get }
 
@@ -86,7 +85,6 @@ public extension AutoSlideConfiguration {
 
     @available(iOS 16.0, *)
     var pageControlDirection: UIPageControl.Direction { .natural }
-    @available(iOS 14.0, *)
     var pageControlPreferredIndicatorImage: UIImage? { nil }
     @available(iOS 16.0, *)
     var pageControlPreferredCurrentPageIndicatorImage: UIImage? { nil }
